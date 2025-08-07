@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
+  background: linear-gradient(135deg, #720d8e, #dda9e7);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}

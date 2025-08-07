@@ -1,0 +1,30 @@
+/* .dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.dropdownContent {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownContent li {
+  margin: 0.5rem 0;
+}
+
+.dropdownContent li a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdownContent li a:hover {
+  color: #007bff;
+} */

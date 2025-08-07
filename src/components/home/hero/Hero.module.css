@@ -1,0 +1,168 @@
+.heroWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  overflow-x: auto;
+  /* padding-left: 4rem; */
+  /* padding-right: 4rem; */
+  margin-top: 20px;
+
+}
+
+.card {
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* background: rgba(255, 255, 255, 0.15); */
+  /* backdrop-filter: blur(100px); */
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); */
+  width: 300px;
+  height: 500px;
+}
+
+/* Positioning */
+.left,
+.right {
+  width: 90px;
+  height: 600px;
+  opacity: 0.9;
+  pointer-events: auto;
+  backdrop-filter: blur(500px);
+  -webkit-backdrop-filter: blur(40px);
+  opacity: 0.4;
+}
+
+/* .left:hover,
+.right:hover {
+  opacity: 0.9;
+} */
+
+.active {
+  width: 70%;
+  height: 580px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.05);
+}
+
+/* Image Section */
+.cardImage {
+  width: 100%;
+  height: 100%;
+
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+/* Text */
+.cardText {
+  padding: 1rem;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.40), transparent);
+}
+
+.cardText h1 {
+  font-size: 3rem;
+  white-space: pre-line;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+  margin-top: 10%;
+  margin-left: 12%;
+
+}
+
+.cardText p {
+  font-size: 0.9rem;
+  margin-left: 20%;
+}
+
+/* Progress Bar */
+.progressBar {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progressBar div {
+  height: 100%;
+  background-color: #00ffcc;
+  transition: width 0.3s ease;
+}
+
+/* Button */
+.cardContent {
+  padding: 1rem;
+  /* text-align: center; */
+}
+
+.cardContent button {
+  padding: 0.6rem 1.2rem;
+  background: #f9f9f9;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 20%;
+  /* margin-top: -30px; */
+
+}
+
+.text {
+  font-size: 40px;
+  margin-left: 20%;
+  margin-top: 25px;
+}
+
+.logoContainer {
+  display: flex;
+  gap: 40px;
+  margin-left: 20%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 250px;
+    height: 380px;
+  }
+
+  .cardText h1 {
+    font-size: 1.2rem;
+  }
+
+  .cardText p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroWrapper {
+    padding: 1rem 0.5rem;
+  }
+
+  .card {
+    width: 200px;
+    height: 340px;
+  }
+}
