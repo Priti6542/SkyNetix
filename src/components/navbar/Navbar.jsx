@@ -48,13 +48,13 @@ const Navbar = () => {
             {/* {openDropdown === 'healthcare' && <HealthcareDropdown />}
           </li> */}
 
-          {/* <li
-            onMouseEnter={() => handleMouseEnter('career')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link to="/career">Career</Link>
-            {openDropdown === 'career' && <CareerDropdown />}
-          </li> */}
+           <Link to="/services">Services</Link>
+
+
+          
+          
+            <Link to="/contact">ContactUS</Link>
+            
 
           {/* <li
             onMouseEnter={() => handleMouseEnter('contact')}

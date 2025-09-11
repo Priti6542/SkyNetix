@@ -57,7 +57,7 @@ const Features = () => {
 
       {/* This is the next section that we will scroll to */}
       <div id="next-section" className="h-screen bg-white flex items-center justify-center">
-        <h2 className="text-3xl font-bold">Next Section Content</h2>
+        <h2 className="text-3xl font-bold"></h2>
       </div>
     </div>
   );

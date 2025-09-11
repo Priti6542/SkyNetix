@@ -4,12 +4,13 @@
   align-items: center;
   gap: 30px;
   overflow-x: auto;
-  /* padding-left: 4rem; */
-  /* padding-right: 4rem; */
   margin-top: 20px;
-
+  padding-left: 1rem;  /* Mobile padding */
+  padding-right: 1rem; /* Mobile padding */
+  scroll-padding-left: 1rem; /* Tailwind equivalent for smooth scroll */
 }
 
+/* Cards */
 .card {
   position: relative;
   transition: all 0.4s ease;
@@ -19,31 +20,22 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* background: rgba(255, 255, 255, 0.15); */
-  /* backdrop-filter: blur(100px); */
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); */
   width: 300px;
   height: 500px;
 }
 
-/* Positioning */
+/* Side cards */
 .left,
 .right {
   width: 90px;
   height: 600px;
-  opacity: 0.9;
-  pointer-events: auto;
-  backdrop-filter: blur(500px);
-  -webkit-backdrop-filter: blur(40px);
   opacity: 0.4;
+  pointer-events: auto;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
 }
 
-/* .left:hover,
-.right:hover {
-  opacity: 0.9;
-} */
-
+/* Active card */
 .active {
   width: 70%;
   height: 580px;
@@ -56,7 +48,6 @@
 .cardImage {
   width: 100%;
   height: 100%;
-
 }
 
 .cardImage img {
@@ -64,7 +55,6 @@
   height: 100%;
   object-fit: cover;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
 }
 
 /* Text */
@@ -75,7 +65,7 @@
   top: 0;
   z-index: 2;
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.40), transparent);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), transparent);
 }
 
 .cardText h1 {
@@ -85,7 +75,6 @@
   justify-content: center;
   margin-top: 10%;
   margin-left: 12%;
-
 }
 
 .cardText p {
@@ -112,7 +101,6 @@
 /* Button */
 .cardContent {
   padding: 1rem;
-  /* text-align: center; */
 }
 
 .cardContent button {
@@ -124,10 +112,9 @@
   cursor: pointer;
   font-weight: bold;
   margin-left: 20%;
-  /* margin-top: -30px; */
-
 }
 
+/* Text & Logos */
 .text {
   font-size: 40px;
   margin-left: 20%;
@@ -140,7 +127,7 @@
   margin-left: 20%;
 }
 
-/* Responsive */
+/* Responsive - Tablets and smaller */
 @media screen and (max-width: 768px) {
   .card {
     width: 250px;
@@ -148,14 +135,31 @@
   }
 
   .cardText h1 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    margin-left: 10%;
   }
 
   .cardText p {
     font-size: 0.8rem;
+    margin-left: 12%;
+  }
+
+  .cardContent button {
+    margin-left: 10%;
+  }
+
+  .text {
+    font-size: 28px;
+    margin-left: 12%;
+  }
+
+  .logoContainer {
+    gap: 30px;
+    margin-left: 12%;
   }
 }
 
+/* Responsive - Mobile phones */
 @media screen and (max-width: 480px) {
   .heroWrapper {
     padding: 1rem 0.5rem;
@@ -164,5 +168,31 @@
   .card {
     width: 200px;
     height: 340px;
+  }
+
+  .cardText h1 {
+    font-size: 1.2rem;
+    margin-left: 8%;
+  }
+
+  .cardText p {
+    font-size: 0.75rem;
+    margin-left: 8%;
+  }
+
+  .cardContent button {
+    margin-left: 8%;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .text {
+    font-size: 22px;
+    margin-left: 8%;
+  }
+
+  .logoContainer {
+    gap: 20px;
+    margin-left: 8%;
   }
 }

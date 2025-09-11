@@ -1,110 +1,133 @@
 import React from "react";
-// import avatar from "../assets/samer-awajan.png"; // optional: uncomment if using avatar image
 
 const ContactSection = () => {
   return (
-    <section className="flex flex-col md:flex-row h-6 bg-[#1a1a1a] text-white -mt-20">
-      
-      <div className="w-full md:w-1/2 p-8">
-        <h2 className="text-4xl font-light mb-8">Contact Us</h2>
-        <form className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm mb-1">Full name *</label>
+    <section className="flex flex-col md:flex-row bg-[#1a1a1a] text-white -mt-20 px-6 md:px-12 py-16 gap-10">
+      {/* Contact Form */}
+      <div className="w-full md:w-1/2 bg-white text-gray-800 rounded-2xl shadow-lg p-8 flex flex-col justify-between">
+        <div>
+          <h2 className="text-3xl font-semibold mb-8 text-center md:text-left">
+            Contact Us
+          </h2>
+
+          <form className="space-y-6">
+            {/* Full name + Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col">
+                <label className="text-sm font-medium mb-2">Full Name *</label>
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  required
+                  className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-medium mb-2">Email *</label>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
+                />
+              </div>
+            </div>
+
+            {/* Phone + Country */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col">
+                <label className="text-sm font-medium mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  placeholder="+91 9876543210"
+                  required
+                  className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-medium mb-2">Country *</label>
+                <input
+                  type="text"
+                  placeholder="India"
+                  required
+                  className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
+                />
+              </div>
+            </div>
+
+            {/* Company */}
+            <div className="flex flex-col">
+              <label className="text-sm font-medium mb-2">Company *</label>
               <input
                 type="text"
-                className="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2"
+                placeholder="Your company name"
+                required
+                className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
               />
             </div>
-            <div>
-              <label className="block text-sm mb-1">Email *</label>
-              <input
-                type="email"
-                className="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2"
-              />
-            </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm mb-1">Phone number *</label>
-              <input
-                type="text"
-                className="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2"
-              />
+            {/* Message */}
+            <div className="flex flex-col relative">
+              <label className="text-sm font-medium mb-2">Message *</label>
+              <textarea
+                rows="4"
+                placeholder="Write your message here..."
+                required
+                className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 resize-none placeholder-gray-500"
+              ></textarea>
+              <span className="absolute right-2 bottom-2 text-gray-400">✎</span>
             </div>
-            <div>
-              <label className="block text-sm mb-1">Country *</label>
-              <input
-                type="text"
-                value=""
-                readOnly
-                className="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2"
-              />
+
+            {/* Checkbox */}
+            <div className="flex items-center gap-2">
+              <input type="checkbox" id="subscribe" className="w-4 h-4" />
+              <label htmlFor="subscribe" className="text-sm text-gray-600">
+                I want to receive news and updates once in a while
+              </label>
             </div>
-          </div>
 
-          <div>
-            <label className="block text-sm mb-1">Company *</label>
-            <input
-              type="text"
-              className="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2"
-            />
-          </div>
-
-          <div className="relative">
-            <label className="block text-sm mb-1">Message *</label>
-            <textarea
-              rows="3"
-              className="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 pr-8 resize-none"
-            ></textarea>
-            <div className="absolute right-2 bottom-2 text-gray-500">✎</div>
-            <div className="flex items-start gap-2">
-            <input type="checkbox" className="mt-1" />
-           <span className="text-sm text-white-600">
-              I want to receive news and updates once in a while
-            </span> 
-            
-          </div>
-         <button className="mt-4 px-6 py-2 bg-white text-black rounded-full hover:bg-purple-900 transition">
-         Contact Us
-         </button>
-          </div>
-        </form>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="mt-6 w-full px-6 py-3 bg-purple-700 text-white font-medium rounded-full hover:bg-purple-900 transition duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
 
-      {/* Testimonial Box with black border */}
-      <div className="w-full md:w-1/2 p-8">
-        <div className="border border-black rounded-lg p-8 bg-white text-gray-800">
-          <h3 className="text-xl font-semibold mb-4">What our customers say</h3>
+      {/* Testimonial Section */}
+      <div className="w-full md:w-1/2 bg-white text-gray-800 rounded-2xl shadow-lg p-8 flex flex-col justify-between">
+        <div>
+          <h3 className="text-3xl font-semibold mb-8 text-center md:text-left">
+            What Our Customers Say
+          </h3>
 
-          <div className="text-5xl text-gray-400 mb-4 leading-none">❝</div>
+          <div className="text-5xl text-purple-700 mb-6 leading-none">❝</div>
 
-          <p className="text-base leading-relaxed mb-6">
-            ELEKS has been involved in the development of a number of our consumer-facing websites and
-            mobile applications that allow our customers to easily track their shipments, get the
-            information they need as well as stay in touch with us. We’ve appreciated the level of
-            ELEKS'expertise, responsiveness and attention to details.
+          <p className="text-base leading-relaxed mb-8 text-gray-700">
+            ELEKS has been involved in the development of a number of our
+            consumer-facing websites and mobile applications that allow our
+            customers to easily track their shipments, get the information they
+            need as well as stay in touch with us. We’ve appreciated the level
+            of ELEKS' expertise, responsiveness, and attention to detail.
           </p>
 
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4">
+            {/* Avatar (optional) */}
             {/* <img
               src={avatar}
               alt="Samer Awajan"
-              className="w-16 h-16 rounded-full object-cover"
+              className="w-14 h-14 rounded-full object-cover"
             /> */}
             <div>
               <p className="font-semibold">Samer Awajan</p>
               <p className="text-sm text-gray-500">CTO, Aramex</p>
             </div>
           </div>
-
-          {/* <div className="flex items-start gap-2">
-            <input type="checkbox" className="mt-1" />
-           <span className="text-sm text-gray-600">
-              I want to receive news and updates once in a while
-            </span> 
-          </div> */}
         </div>
       </div>
     </section>

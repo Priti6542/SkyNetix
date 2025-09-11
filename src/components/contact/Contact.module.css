@@ -1,0 +1,75 @@
+/* Contact.module.css */
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(130, 40, 152, 0.3);
+  animation-timing-function: ease-in-out;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.bubble1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 15%;
+  animation: bubbleMove 6s infinite;
+}
+
+.bubble2 {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 30%;
+  animation: bubbleMove 4.5s infinite 1.2s;
+}
+
+.bubble3 {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 65%;
+  animation: bubbleMove 7s infinite 0.5s;
+}
+
+.bubble4 {
+  width: 50px;
+  height: 50px;
+  top: 40%;
+  left: 80%;
+  animation: bubbleMove 5s infinite 0.8s;
+}
+
+.bubble5 {
+  width: 70px;
+  height: 70px;
+  top: 10%;
+  left: 75%;
+  animation: bubbleMove 6.5s infinite 1.5s;
+}
+
+@keyframes bubbleMove {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) translateX(15px);
+    opacity: 0.8;
+  }
+}
+
+.groupHover :global(.bubble) {
+  opacity: 0.8;
+  animation-play-state: running;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animateFadeIn {
+  animation: fadeIn 0.6s cubic-bezier(.96,.08,.57,.95) forwards;
+}

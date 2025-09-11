@@ -1,100 +1,71 @@
-import React from "react";
-import { Box, Typography, Button, Divider, Grid, IconButton } from "@mui/material";
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import React from 'react';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import footerData from './FooterData';
 
 const Footer = () => {
-    const navigate = useNavigate(); // ✅ Initialize navigation function
+  const { about, usefulLinks, services, contact } = {
+    about: footerData[0].about,
+    usefulLinks: footerData[1].usefulLinks,
+    services: footerData[2].services,
+    contact: footerData[3].contact
+  };
 
-    return (
-        <Box sx={{ bgcolor: "#212121", color: "#bdbdbd", py: 6, px: 3 }}>
-            {/* CTA Section */}
-            <Box maxWidth="lg" mx="auto" textAlign={{ xs: "center", md: "left" }}>
-                <Typography variant="caption" textTransform="uppercase" color="gray">
-                    Get started
-                </Typography>
-                <Typography variant="h5" fontWeight="bold" color="white" mt={1}>
-                    Boost your productivity. <br /> Start using our app today.
-                </Typography>
-                <Button
-                    variant="contained"
-                    sx={{ mt: 3, bgcolor: "#ff7043", ":hover": { bgcolor: "#f4511e" } }}
-                >
-                    Get Started
-                </Button>
-            </Box>
-
-            {/* Footer Links Section */}
-            <Divider sx={{ my: 5, bgcolor: "#424242" }} />
-            <Grid container columnSpacing={30} rowSpacing={3} maxWidth="lg" mx="auto">
-                <Grid item xs={12} md={3} textAlign={{ xs: "center", md: "left" }}>
-                    <img src="https://smartmatrixds.com/assets/img/smds-logo.jpeg" alt="Company Logo" style={{ height: 40 }}
-                        onClick={() => navigate("/")} />
-                </Grid>
-
-                {["Services", "US Healthcare", "Contact US"].map((section, index) => (
-                    <Grid item xs={12} md={3} key={index}>
-                        <Typography variant="subtitle1" color="white" fontWeight="bold" >
-                            {section}
-                        </Typography>
-                        <Box mt={2}>
-                            {section === "Services" &&
-                                ["Management", "Digital Marketing", "Management Courses", "Devlopment", "IT Courses", "Courses"].map((item) => (
-                                    <Typography key={item} variant="body2" sx={{ cursor: "pointer", ":hover": { color: "white" } }}
-                                        onClick={() => navigate("/services")}>
-                                        {item}
-                                    </Typography>
-                                ))}
-
-                            {section === "US Healthcare" &&
-                                ["AR Caller", "Medical Coding", "Medical Billing"].map((item) => (
-                                    <Typography
-                                        key={item}
-                                        variant="body2"
-                                        sx={{ cursor: "pointer", ":hover": { color: "white" } }}
-                                        onClick={() => navigate("/ushealthcare")} // ✅ Corrected onClick placement
-                                    >
-                                        {item}
-                                    </Typography>
-                                ))}
-
-                            {section === "Contact US" &&
-                                ["contact"].map((item) => (
-                                    <Typography key={item} variant="body2" sx={{ cursor: "pointer", ":hover": { color: "white" } }}
-                                        onClick={() => navigate("/contact")}>
-                                        {item}
-                                    </Typography>
-                                ))}
-                        </Box>
-                    </Grid>
-                ))}
-            </Grid>
-
-
-            {/* Social Media & Copyright */}
-            <Divider sx={{ my: 5, bgcolor: "#424242" }} />
-            <Box
-                maxWidth="lg"
-                mx="auto"
-                textAlign="center"
-                display="flex"
-                flexDirection={{ xs: "column", md: "row" }}
-                justifyContent="space-between"
-                alignItems="center"
-            >
-                <Typography variant="body2" color="gray">
-                    © 2024 Your Company, Inc. All rights reserved.
-                </Typography>
-                <Box mt={{ xs: 2, md: 0 }}>
-                    {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube].map((Icon, index) => (
-                        <IconButton key={index} sx={{ color: "gray", ":hover": { color: "white" } }}>
-                            <Icon size={18} />
-                        </IconButton>
-                    ))}
-                </Box>
-            </Box>
-        </Box>
-    );
+  return (
+    <footer className="bg-gray-900 text-gray-300 px-4 pt-10 pb-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+        {/* About Section */}
+        <div>
+          <img src={about.logo} alt="Devcons Logo" className="h-10 mb-3" />
+          <h2 className="text-lg font-semibold text-white mb-1">{about.title}</h2>
+          <p className="mb-4 text-sm">{about.description}</p>
+          <div className="flex space-x-3 mt-2">
+            {about.socialLinks.map(({ icon, url }) => {
+              const iconMap = {
+                facebook: <FaFacebookF size={20} />,
+                twitter: <FaTwitter size={20} />,
+                instagram: <FaInstagram size={20} />,
+                linkedin: <FaLinkedin size={20} />
+              };
+              return (
+                <a key={icon} href={url} target="_blank" rel="noopener noreferrer" className="hover:text-white transform hover:scale-110 transition">
+                  {iconMap[icon]}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+        {/* Useful Links */}
+        <div>
+          <h2 className="text-lg font-semibold text-white mb-3">Useful Links</h2>
+          <ul className="space-y-2">
+            {usefulLinks.map(link => (
+              <li key={link.title}>
+                <a href={link.path} className="hover:text-white hover:underline transition">{link.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Services */}
+        <div>
+          <h2 className="text-lg font-semibold text-white mb-3">Our Services</h2>
+          <ul className="space-y-2">
+            {services.map(service => (
+              <li key={service} className="hover:text-white transition">{service}</li>
+            ))}
+          </ul>
+        </div>
+        {/* Contact */}
+        <div>
+          <h2 className="text-lg font-semibold text-white mb-3">Contact Us</h2>
+          <p className="text-sm mb-2">{contact.address}</p>
+          <p className="text-sm mb-2">Phone: <a href={`tel:${contact.phone}`} className="hover:text-white transition">{contact.phone}</a></p>
+          <p className="text-sm">Email: <a href={`mailto:${contact.email}`} className="hover:text-white transition">{contact.email}</a></p>
+        </div>
+      </div>
+      <div className="border-t border-gray-700 mt-8 pt-6 text-center text-xs text-gray-400">
+        © 2025 Devcons Software Solutions Pvt. Ltd. All rights reserved.
+      </div>
+    </footer>
+  );
 };
-
 export default Footer;
