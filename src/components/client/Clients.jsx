@@ -11,7 +11,7 @@ import drax from "../../assets/DRAx.png";
 import cubeage from "../../assets/cubeage.jpeg";
 import dpd from "../../assets/dpd.png";
 import hsbc from "../../assets/HSBC.png";
-import oracle from "../../assets/oracle.jpg";
+import oracle from "../../assets/Oracle.jpg"
 import devcons from "../../assets/devcons.png";
 import nexus from "../../assets/nexuxctc_logo.jpeg";
 import smartmatrix from "../../assets/smartmatrix.png";
