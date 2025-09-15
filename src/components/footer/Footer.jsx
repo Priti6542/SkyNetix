@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-gray-700 mt-8 pt-6 text-center text-xs text-gray-400">
-        © 2025 Devcons Software Solutions Pvt. Ltd. All rights reserved.
+        © 2025 SkyNetix Software Solutions Pvt. Ltd. All rights reserved.
       </div>
     </footer>
   );

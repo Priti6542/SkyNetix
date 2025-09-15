@@ -1,62 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
+import { FiPlus, FiX } from "react-icons/fi";
 import FeatureData from "./FeatureData";
+import {
+  FaDesktop,
+  FaChartLine,
+  FaMobileAlt,
+} from "react-icons/fa";
+
+import { motion, AnimatePresence } from "framer-motion";
+
+const expandVariants = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+    marginTop: 0,
+    transition: { duration: 0.25, ease: "easeInOut" }
+  },
+  visible: {
+    opacity: 1,
+    height: "auto",
+    marginTop: 16,
+    transition: { duration: 0.35, ease: "easeOut" }
+  },
+};
 
 export default function HomeFeature() {
+  const cardItems = FeatureData.slice(0, 3);
+
+  const cardIcons = [
+    <FaDesktop size={36} className="text-blue-500 mb-2" />,
+    <FaChartLine size={36} className="text-blue-500 mb-2" />,
+    <FaMobileAlt size={36} className="text-blue-500 mb-2" />,
+  ];
+
+  const [openIdx, setOpenIdx] = useState(null);
+
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-        * {
-          font-family: 'Poppins', sans-serif;
-        }
-        /* Smooth fade-up animation */
-        .fade-up {
-          opacity: 0;
-          transform: translateY(20px);
-          animation-fill-mode: forwards;
-          animation-name: fadeUpAnim;
-          animation-duration: 0.8s;
-          animation-timing-function: ease;
-        }
-        @keyframes fadeUpAnim {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+        * { font-family: 'Poppins', sans-serif; }
       `}</style>
 
       <h1 className="text-3xl sm:text-4xl font-extrabold text-center mx-auto mt-8 text-gray-900">
         Our Features
       </h1>
       <p className="text-base text-gray-600 text-center mt-2 max-w-xl mx-auto">
-        Here are some typical services of Devcons Software Solutions Pvt. Ltd.
+        Here are some typical services of SkyNetics Software Solutions Pvt. Ltd.
       </p>
 
-      <div className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap items-stretch gap-6 mt-10 mx-auto w-full px-4 sm:px-6 lg:px-0 max-w-7xl mb-10">
-        {FeatureData.map((item, index) => (
-          <div
-            key={index}
-            className="relative group w-full sm:w-1/2 md:w-1/3 h-72 sm:h-96 overflow-hidden rounded-xl shadow-lg transition-transform duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer fade-up"
-            style={{ animationDelay: `${index * 0.15}s` }}
-          >
-            <img
-              className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 ${item.imagePosition}`}
-              src={item.imageUrl}
-              alt={item.title}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-tight drop-shadow-md">
-                {item.title}
-              </h2>
-              <p className="text-sm sm:text-base line-clamp-4 drop-shadow-md">
-                {item.description}
-              </p>
-            </div>
-          </div>
-        ))}
+      <div className="flex flex-col md:flex-row items-stretch w-full max-w-7xl mx-auto mt-10 bg-white rounded-xl overflow-hidden shadow mb-20">
+        {cardItems.map((item, idx) => {
+          const isOpen = idx === openIdx;
+          return (
+            <motion.div
+              key={item.title || idx}
+              className="flex flex-col relative p-8 min-h-[210px] justify-between
+          border-b md:border-b-0 md:border-r last:border-none border-gray-200 bg-white cursor-pointer rounded-lg shadow-md"
+              layout
+              style={{
+                // On mobile (column) make each card full width, else use the flexBasis logic for row
+                flexBasis: isOpen ? (window.innerWidth >= 768 ? "60%" : "100%") : (window.innerWidth >= 768 ? "20%" : "100%"),
+                transition: "flex-basis 0.5s ease",
+                width: window.innerWidth < 768 ? "100%" : "auto",
+              }}
+            >
+              {/* Card header */}
+              <div>
+                {cardIcons[idx]}
+                <h3 className="mt-1 text-lg font-bold text-gray-900 w-60 md:w-auto">{item.title}</h3>
+                {isOpen && (
+                  <motion.p
+                    key="desc"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="text-gray-700 text-[15px] leading-relaxed mt-4"
+                  >
+                    {item.description}
+                  </motion.p>
+                )}
+              </div>
+
+              {/* Toggle Button */}
+              <button
+                aria-label={isOpen ? "Collapse details" : "Expand details"}
+                onClick={() => setOpenIdx(isOpen ? null : idx)}
+                className="absolute right-7 bottom-6 flex items-center justify-center w-9 h-9 rounded-full bg-white border border-gray-300 shadow-sm hover:bg-gray-100 focus:outline-none"
+              >
+                {isOpen ? <FiX size={22} className="text-gray-700" /> : <FiPlus size={22} className="text-gray-700" />}
+              </button>
+            </motion.div>
+          );
+        })}
       </div>
+
+
     </>
   );
 }

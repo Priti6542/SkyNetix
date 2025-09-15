@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
+  const [error, setError] = useState(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    emailjs
+      .sendForm(
+        "service_70nizos",
+        "template_4ynlcpe",
+        form.current,
+        "K6cyaZrhz1z6LTGHU"
+      )
+      .then(
+        (result) => {
+          setLoading(false);
+          setMessageSent(true);
+          form.current.reset();
+        },
+        (error) => {
+          setLoading(false);
+          setError("Failed to send message. Please try again.");
+          console.error(error.text);
+        }
+      );
+  };
+
   return (
     <section className="flex flex-col md:flex-row bg-[#1a1a1a] text-white -mt-20 px-6 md:px-12 py-16 gap-10">
       {/* Contact Form */}
@@ -10,13 +42,14 @@ const ContactSection = () => {
             Contact Us
           </h2>
 
-          <form className="space-y-6">
+          <form ref={form} onSubmit={sendEmail} className="space-y-6">
             {/* Full name + Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col">
                 <label className="text-sm font-medium mb-2">Full Name *</label>
                 <input
                   type="text"
+                  name="fullName"
                   placeholder="Enter your full name"
                   required
                   className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
@@ -26,6 +59,7 @@ const ContactSection = () => {
                 <label className="text-sm font-medium mb-2">Email *</label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
                   required
                   className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
@@ -41,6 +75,7 @@ const ContactSection = () => {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="+91 9876543210"
                   required
                   className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
@@ -50,6 +85,7 @@ const ContactSection = () => {
                 <label className="text-sm font-medium mb-2">Country *</label>
                 <input
                   type="text"
+                  name="country"
                   placeholder="India"
                   required
                   className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
@@ -62,6 +98,7 @@ const ContactSection = () => {
               <label className="text-sm font-medium mb-2">Company *</label>
               <input
                 type="text"
+                name="company"
                 placeholder="Your company name"
                 required
                 className="w-full bg-transparent border-b border-gray-400 focus:border-purple-700 focus:outline-none py-2 placeholder-gray-500"
@@ -72,6 +109,7 @@ const ContactSection = () => {
             <div className="flex flex-col relative">
               <label className="text-sm font-medium mb-2">Message *</label>
               <textarea
+                name="message"
                 rows="4"
                 placeholder="Write your message here..."
                 required
@@ -82,7 +120,7 @@ const ContactSection = () => {
 
             {/* Checkbox */}
             <div className="flex items-center gap-2">
-              <input type="checkbox" id="subscribe" className="w-4 h-4" />
+              <input type="checkbox" id="subscribe" name="subscribe" className="w-4 h-4" />
               <label htmlFor="subscribe" className="text-sm text-gray-600">
                 I want to receive news and updates once in a while
               </label>
@@ -91,11 +129,21 @@ const ContactSection = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="mt-6 w-full px-6 py-3 bg-purple-700 text-white font-medium rounded-full hover:bg-purple-900 transition duration-300"
+              disabled={loading}
+              className="mt-6 w-full px-6 py-3 bg-purple-700 text-white font-medium rounded-full hover:bg-purple-900 transition duration-300 disabled:opacity-50"
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
+
+          {messageSent && (
+            <p className="mt-4 text-green-600 font-semibold">
+              Message sent successfully! We will get back to you soon.
+            </p>
+          )}
+          {error && (
+            <p className="mt-4 text-red-600 font-semibold">{error}</p>
+          )}
         </div>
       </div>
 

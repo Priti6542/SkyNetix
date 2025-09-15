@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroSection from '../../commons/HeroSection';
-import ServicesSection from '../../commons/ServicesSection';
-import ServiceBenefits from '../../commons/ServiceBenefits';
+import Hero from "../hero/Hero";
+import ServiceSection from '../servicesection/serviceSection';
+import Benefits from '../benefits/Benefits';
 import { FaDesktop, FaMobileAlt, FaChartLine, FaDatabase } from 'react-icons/fa';
 
 const AppDevelopment = () => {
@@ -47,9 +47,9 @@ const AppDevelopment = () => {
 
   return (
     <div className="py-10 bg-white overflow-hidden">
-      <HeroSection {...heroData} />
-      <ServicesSection heading="End-to-end Application Development" services={services} />
-      <ServiceBenefits
+      <Hero {...heroData} />
+      <ServiceSection heading="End-to-end Application Development" services={services} />
+      <Benefits
         heading="Service benefits"
         subheading="What you can achieve with ELEKS’ custom application development services"
         benefits={benefits}

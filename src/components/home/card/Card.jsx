@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { CardData } from './CardData.jsx';
 
 function CardSection() {
@@ -13,8 +12,7 @@ function CardSection() {
 
       <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 w-full h-auto sm:h-[400px]">
         {cardItems.map((item, index) => (
-          <Link
-            to="/CardData"
+          <div
             key={index}
             className="
               relative group 
@@ -48,7 +46,7 @@ function CardSection() {
               <h4 className="text-2xl font-bold mb-1">{item.title}</h4>
               <p className="text-sm line-clamp-4">{item.description}</p>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

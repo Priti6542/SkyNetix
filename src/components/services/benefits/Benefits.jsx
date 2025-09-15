@@ -3,14 +3,16 @@ import { motion } from 'framer-motion';
 
 const Benefits = ({ heading, subheading, benefits }) => {
   return (
-    <div className="text-black ml-50 mt-20">
-      <div className="text-2xl">
-        <h1>{heading}</h1>
-      </div>
-      <p className="font-stretch-50% text-4xl mt-10">{subheading}</p>
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-20 text-black">
+      <header className="mb-8 md:mb-12 text-center md:text-left">
+        <h1 className="text-3xl sm:text-4xl font-extrabold">{heading}</h1>
+        <p className="font-light text-lg sm:text-2xl mt-4 max-w-4xl mx-auto md:mx-0 whitespace-pre-line">
+          {subheading}
+        </p>
+      </header>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mr-16"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
         initial="hidden"
         animate="visible"
         variants={{
@@ -25,7 +27,7 @@ const Benefits = ({ heading, subheading, benefits }) => {
         {benefits.map((title, index) => (
           <motion.div
             key={index}
-            className="bg-white/40 backdrop-blur-md p-6 rounded-xl cursor-pointer"
+            className="bg-white bg-opacity-40 backdrop-blur-md p-6 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-shadow"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
@@ -39,9 +41,9 @@ const Benefits = ({ heading, subheading, benefits }) => {
               transition: { type: 'spring', stiffness: 200, damping: 12 },
             }}
           >
-            <div className="text-lg font-bold text-blue-600 mb-1">{index + 1}.</div>
-            <h3 className="text-xl font-semibold mb-2">{title}</h3>
-            <p className="text-sm text-gray-700">
+            <div className="text-xl font-bold text-blue-600 mb-2">{index + 1}.</div>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
+            <p className="text-sm text-gray-700 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br />
               Quisque ut leo vitae justo blandit facilisis.
@@ -49,7 +51,7 @@ const Benefits = ({ heading, subheading, benefits }) => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 };
 

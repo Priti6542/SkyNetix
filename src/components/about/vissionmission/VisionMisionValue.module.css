@@ -111,3 +111,125 @@ margin-top: 40px;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
+
+
+/* Responsive Styles */
+
+/* Tablets (max-width 991px) */
+@media (max-width: 991px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .timeline {
+    gap: 60px;
+  }
+
+  .cardContainer {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 600px;
+    padding: 25px 20px;
+  }
+  
+  /* Keep the horizontal card alignment on tablets */
+  .left, .right {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+
+  .cardDescription {
+    font-size: 15px;
+  }
+  
+  /* Vertical line narrower & shorter on tablets */
+  .verticalLine {
+    width: 3px;
+  }
+
+  .circle {
+    display: none;
+    /* width: 18px; */
+    /* height: 18px; */
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .videoBackgroundWrapper {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .timeline {
+    gap: 50px;
+    /* Stack cards vertically */
+    align-items: center;
+  }
+
+  /* Stack cards vertically full width */
+  .cardContainer {
+    flex-direction: column !important;
+    justify-content: center !important;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Cards full width with margin */
+  .card {
+    width: 100%;
+    max-width: none;
+    padding: 20px 15px;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Center text on mobile */
+  .left, .right {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .cardDescription {
+    font-size: 14px;
+  }
+
+  /* Hide vertical line on mobile for cleaner look */
+  .verticalLine {
+    display: none;
+  }
+
+  /* Adjust circle size & position on mobile */
+  .circle {
+    width: 16px;
+    height: 16px;
+    top: 10%;
+    left: 50%;
+  }
+}

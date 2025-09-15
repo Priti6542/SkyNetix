@@ -128,71 +128,98 @@
 }
 
 /* Responsive - Tablets and smaller */
-@media screen and (max-width: 768px) {
-  .card {
-    width: 250px;
-    height: 380px;
-  }
 
-  .cardText h1 {
-    font-size: 1.6rem;
-    margin-left: 10%;
-  }
 
-  .cardText p {
-    font-size: 0.8rem;
-    margin-left: 12%;
-  }
-
-  .cardContent button {
-    margin-left: 10%;
-  }
-
-  .text {
-    font-size: 28px;
-    margin-left: 12%;
-  }
-
-  .logoContainer {
-    gap: 30px;
-    margin-left: 12%;
-  }
-}
-
-/* Responsive - Mobile phones */
-@media screen and (max-width: 480px) {
+/* Tablet screens: 768px - 1024px */
+@media (max-width: 767px) {
   .heroWrapper {
-    padding: 1rem 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 16px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .card {
-    width: 200px;
-    height: 340px;
+    width: 90vw !important;  /* Active card width full viewport */
+    max-width: 320px;
+    height: 460px !important;
+    border-radius: 20px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background: rgba(40, 40, 40, 0.95);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.7);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .cardText h1 {
-    font-size: 1.2rem;
-    margin-left: 8%;
+  /* Side cards - hide or fade completely on mobile */
+  .left, .right {
+    opacity: 0 !important;  /* hide side cards */
+    pointer-events: none;
+    width: 0 !important;
+    height: 0 !important;
   }
 
-  .cardText p {
-    font-size: 0.75rem;
-    margin-left: 8%;
+  .cardImage {
+    height: 60%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .cardImage img {
+    transition: transform 0.4s ease;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .active .cardImage img {
+    transform: scale(1.05);
+  }
+
+  .cardText {
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    color: #fff;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .cardContent {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1.5rem 1.5rem;
   }
 
   .cardContent button {
-    margin-left: 8%;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    background-color: #00ffcc;
+    color: #000;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
   }
 
+  .cardContent button:hover {
+    background-color: #00d1a1;
+  }
+
+  /* Text and logos centered */
   .text {
-    font-size: 22px;
-    margin-left: 8%;
+    font-size: 24px;
+    margin: 20px auto 30px auto;
+    text-align: center;
+    color: #00ffcc;
   }
 
   .logoContainer {
+    display: flex;
+    justify-content: center;
     gap: 20px;
-    margin-left: 8%;
+    margin-bottom: 30px;
   }
 }
