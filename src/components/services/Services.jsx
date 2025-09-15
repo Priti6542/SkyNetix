@@ -46,10 +46,23 @@ const Services = () => {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto bg-white border shadow-lg mt-6 p-6 rounded-lg 
-                    flex flex-col md:flex-row gap-6">
-      {/* Left Section */}
-      <div className="w-full md:w-1/3 border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 pr-0 md:pr-6 space-y-4">
+    <div
+      className="
+        w-full max-w-6xl mx-auto bg-white border shadow-lg mt-8 p-5 rounded-lg
+        flex flex-col md:flex-row gap-6
+        sm:p-6 md:p-8
+        h-[100vh] md:h-auto overflow-hidden md:overflow-visible
+      "
+    >
+      {/* Left Panel - Categories */}
+      <div
+        className="
+          w-full md:w-1/3
+          border-b md:border-b-0 md:border-r border-gray-200
+          pb-4 md:pb-0 pr-0 md:pr-6 space-y-4
+          overflow-y-auto max-h-[40vh] md:max-h-full
+        "
+      >
         {categories.map((cat, index) => (
           <Category
             key={index}
@@ -61,8 +74,14 @@ const Services = () => {
         ))}
       </div>
 
-      {/* Right Section with AnimatePresence */}
-      <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+      {/* Right Panel - Services List */}
+      <div
+        className="
+          w-full md:w-3/3
+          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative
+          overflow-y-auto max-h-[85vh] md:max-h-full pr-2
+        "
+      >
         <AnimatePresence mode="wait">
           {categories[activeIndex].services.map((s, i) => (
             <motion.div
@@ -70,11 +89,7 @@ const Services = () => {
               initial={{ opacity: 0, scale: 0.85, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: -20 }}
-              transition={{
-                duration: 0.3,
-                delay: i * 0.01,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
+              transition={{ duration: 0.3, delay: i * 0.01, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <ServiceCard icon={s.icon} title={s.title} desc={s.desc} />
             </motion.div>
@@ -88,11 +103,16 @@ const Services = () => {
 const Category = ({ title, desc, active, onHover }) => (
   <div
     onMouseEnter={onHover}
-    className={`p-4 rounded-lg cursor-pointer transition-all duration-300
-      ${active ? 'bg-blue-50 border-l-4 border-blue-500' : 'hover:bg-blue-50 hover:border-l-4 hover:border-blue-400'}
-    `}
+    className={`p-3 rounded-lg cursor-pointer transition-all duration-300 
+      ${active ? 'bg-blue-50 border-l-4 border-blue-500 shadow-sm' : 'hover:bg-blue-50 hover:border-l-4 hover:border-blue-400'}
+      focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-1`}
+    tabIndex={0}
+    role="button"
+    aria-pressed={active}
   >
-    <h3 className={`text-md font-semibold ${active ? 'text-blue-700' : 'text-gray-800'}`}>{title}</h3>
+    <h3 className={`text-md font-semibold ${active ? 'text-blue-700' : 'text-gray-800'}`}>
+      {title}
+    </h3>
     <p className="text-sm text-gray-500 mt-1">{desc}</p>
   </div>
 );
@@ -103,7 +123,7 @@ const ServiceCard = ({ icon, title, desc }) => {
 
   const handleClick = () => {
     if (title === 'App Development') {
-      navigate('/services/app-development'); // nested route path
+      navigate('/services/app-development');
     } else if (title === 'Legacy Modernization') {
       navigate('/services/legacy-modernization');
     }
@@ -114,11 +134,9 @@ const ServiceCard = ({ icon, title, desc }) => {
       onClick={handleClick}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      whileHover={{
-        scale: 1.03,
-        transition: { duration: 0.3 },
-      }}
-      className="p-4 border border-gray-200 rounded-md hover:shadow-lg transition h-44 flex flex-col justify-between cursor-pointer"
+      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+      className="p-5 border border-gray-200 rounded-lg hover:shadow-lg transition h-48 flex flex-col justify-between cursor-pointer bg-white
+        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
       tabIndex={0}
       role="button"
       onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleClick()}
@@ -128,11 +146,11 @@ const ServiceCard = ({ icon, title, desc }) => {
         <motion.div
           animate={{
             rotate: isHovered ? 10 : 0,
-            scale: isHovered ? 1.2 : 1,
+            scale: isHovered ? 1.3 : 1,
             color: isHovered ? '#2563eb' : '#3b82f6',
           }}
           transition={{ type: 'spring', stiffness: 300 }}
-          className="text-blue-600 text-2xl mb-2"
+          className="text-blue-600 text-3xl mb-3"
         >
           {icon}
         </motion.div>
@@ -140,16 +158,16 @@ const ServiceCard = ({ icon, title, desc }) => {
         <motion.h4
           animate={{
             color: isHovered ? '#2563eb' : '#1f2937',
-            scale: isHovered ? 1.05 : 1,
+            scale: isHovered ? 1.1 : 1,
           }}
           transition={{ duration: 0.3 }}
-          className="font-medium text-gray-800"
+          className="font-semibold text-gray-800"
         >
           {title}
         </motion.h4>
       </div>
 
-      <p className="text-sm text-gray-500 mt-1 line-clamp-2">{desc}</p>
+      <p className="text-sm text-gray-600 mt-2 line-clamp-2">{desc}</p>
     </motion.div>
   );
 };
