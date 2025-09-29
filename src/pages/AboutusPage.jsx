@@ -4,7 +4,7 @@ import VisionMissionValue from '../components/about/vissionmission/VisionMisionV
 import Features from '../components/about/features/Features'
 // import CardComponent from '../components/about/card/CardComponent'
 import AboutUs from '../components/about/aboutus/AboutUs'
-import Timeline from '../components/about/timeline/TimeLine'
+// import Timeline from '../components/about/timeline/TimeLine'
 // import AboutUs from '../components/home/aboutus/AboutUs'
 
 const AboutusPage = () => {
@@ -15,7 +15,7 @@ const AboutusPage = () => {
       <AboutUs/>
       {/* <Hero/> */}
       <VisionMissionValue/>
-      <Timeline/>
+      {/* <Timeline/> */}
     
       {/* <AboutUs/> */}
     </div>
