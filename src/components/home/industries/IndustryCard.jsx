@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function IndustryCard({ industry, expanded, onHover, onLeave }) {
   return (
     <motion.div
-      className="relative flex flex-col border rounded-xl bg-white overflow-hidden transition-shadow cursor-pointer mt-10"
+      className="relative flex flex-col justify-center border rounded-xl bg-white overflow-hidden transition-shadow cursor-pointer mt-10 w-80"
       style={{ height: 340 }}
       animate={expanded ? { zIndex: 20, boxShadow: "0 8px 32px rgba(0,0,0,0.25)" } : { zIndex: 10 }}
       onMouseEnter={onHover}
