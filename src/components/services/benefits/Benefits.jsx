@@ -17,14 +17,10 @@ const Benefits = ({ heading, subheading, benefits }) => {
         animate="visible"
         variants={{
           hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.2,
-            },
-          },
+          visible: { transition: { staggerChildren: 0.2 } },
         }}
       >
-        {benefits.map((title, index) => (
+        {benefits.map(({ title, description }, index) => (
           <motion.div
             key={index}
             className="bg-white bg-opacity-40 backdrop-blur-md p-6 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-shadow"
@@ -43,11 +39,7 @@ const Benefits = ({ heading, subheading, benefits }) => {
           >
             <div className="text-xl font-bold text-blue-600 mb-2">{index + 1}.</div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
-            <p className="text-sm text-gray-700 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <br />
-              Quisque ut leo vitae justo blandit facilisis.
-            </p>
+            <p className="text-gray-700">{description}</p>
           </motion.div>
         ))}
       </motion.div>

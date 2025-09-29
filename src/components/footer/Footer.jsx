@@ -11,12 +11,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-gray-300 px-4 pt-10 pb-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+    <footer className="bg-white-900 text-gray-300 px-4 pt-10 pb-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-black">
         {/* About Section */}
         <div>
-          <img src={about.logo} alt="Devcons Logo" className="h-10 mb-3" />
-          <h2 className="text-lg font-semibold text-white mb-1">{about.title}</h2>
+          <img src={about.logo} alt="SkyNetix Logo" className="h-10 mb-3" />
+          <h2 className="text-lg font-semibold text-black mb-1">{about.title}</h2>
           <p className="mb-4 text-sm">{about.description}</p>
           <div className="flex space-x-3 mt-2">
             {about.socialLinks.map(({ icon, url }) => {

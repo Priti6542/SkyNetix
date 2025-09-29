@@ -5,7 +5,7 @@ const footerData = [
     about: {
       title: 'About SkyNetix Software Solutions Pvt. Ltd.',
       description: "Building Tomorrow's Technology, Today.",
-      logo: '/devcons%20New%20logo.png',
+      logo: '/skynetix.png',
       socialLinks: [
         { icon: 'facebook', url: 'https://facebook.com' },
         { icon: 'twitter', url: 'https://twitter.com' },

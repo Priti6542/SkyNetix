@@ -1,61 +1,35 @@
 import React from 'react';
-import Hero from "../hero/Hero";
-import ServiceSection from '../servicesection/serviceSection';
+import { webDevelopment } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import { FaDesktop, FaMobileAlt, FaChartLine, FaDatabase } from 'react-icons/fa';
+import ServiceSection from '../servicesection/serviceSection';
 
-const AppDevelopment = () => {
-  const heroData = {
-    imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Engineering',
-    title: 'Custom Application\nDevelopment Services',
-    description: 'We’ll help you bring your software vision to life with our full-cycle development service.',
-    buttonText: 'Get expert advice',
-  };
+const WebDevelopmentSection = () => {
+  const { hero, services, benefits } = webDevelopment;
 
-  const services = [
-    {
-      icon: <FaDesktop size={32} className="text-blue-500" />,
-      title: 'Desktop software',
-      description: 'Full-cycle development for Windows, macOS, and Linux.',
-    },
-    {
-      icon: <FaChartLine size={32} className="text-blue-500" />,
-      title: 'Web applications',
-      description: 'Covers front-end, back-end, UX, and deployment.',
-    },
-    {
-      icon: <FaMobileAlt size={32} className="text-blue-500" />,
-      title: 'Custom mobile apps',
-      description: 'Cross-platform or native mobile solutions.',
-    },
-    {
-      icon: <FaDatabase size={32} className="text-blue-500" />,
-      title: 'Data visualization tools',
-      description: 'Interactive dashboards and secure backend systems.',
-    },
-  ];
+  // Defined heading for services section
+  const ServiceSectionHeading = "Our Services";
 
-  const benefits = [
-    'Faster time to market',
-    'Improved customer experience',
-    'Custom workflows & automation',
-    'Better scalability & performance',
-    'Lower development costs',
-    'Cross-platform compatibility',
-  ];
+  const benefitsHeading = "Why Choose Our Web Development?";
+  const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
 
   return (
-    <div className="py-10 bg-white overflow-hidden">
-      <Hero {...heroData} />
-      <ServiceSection heading="End-to-end Application Development" services={services} />
-      <Benefits
-        heading="Service benefits"
-        subheading="What you can achieve with ELEKS’ custom application development services"
-        benefits={benefits}
-      />
-    </div>
+    <section>
+      {/* Hero Section */}
+      <div className="hero">
+        <img src={hero.imageUrl} alt="Web Development Hero" style={{ width: '100%', height: 'auto' }} />
+        <h3>{hero.subtitle}</h3>
+        <h1>{hero.title}</h1>
+        <p>{hero.description}</p>
+        <button>{hero.buttonText}</button>
+      </div>
+
+      {/* Services Section */}
+      <ServiceSection heading={ServiceSectionHeading} services={services} />
+
+      {/* Benefits Section */}
+      <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />
+    </section>
   );
 };
 
-export default AppDevelopment;
+export default WebDevelopmentSection;

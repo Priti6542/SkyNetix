@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import skynetix from "../../assets/skynetix.png";
 import Services from "../services/Services";
 
 const Navbar = () => {
@@ -32,16 +33,29 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="text-black px-6 py-4 border-b border-gray-300 relative z-50 bg-white">
+    // <nav className="text-black px-6 py-4 border-b border-gray-300 relative z-50 bg-white">
+    <nav className="text-black px-6 py-4 border-b border-gray-300 relative z-50 bg-white overflow-hidden">
+
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-bold tracking-wide select-none">SkyNetix</div>
+        {/* <div className="text-2xl font-bold tracking-wide select-none"> */}
+        <Link to="/" className="flex items-center">
+  <img
+    src={skynetix}
+    alt="SkyNetix Logo"
+    className="h-10 w-auto select-none"
+    draggable={false}
+  />
+</Link>
+        {/* </div> */}
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-medium font-medium">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <Link to={link.to} className="hover:text-indigo-600">{link.label}</Link>
+              {/* <Link to={link.to} className="hover:text-indigo-600">{link.label}</Link> */}
+              <Link to={link.to} className="hover:text-indigo-600 inline-block">{link.label}</Link>
+
             </li>
           ))}
           <li>

@@ -25,6 +25,7 @@ export const CardData = [
     image: 'https://i.pinimg.com/474x/c6/eb/45/c6eb45f1c5b648291f407cae581591af.jpg',
     title: 'User Experience Design',
     description:
-      'We are a team of skilled and experienced web developers dedicated to creating high-quality, responsive, and user-friendly websites for our clients. From responsive designs to robust backend systems, we leverage a diverse skill set to deliver tailored web solutions. Our expertise ensures that our clients receive scalable and secure websites.',
+      'We are a team of skilled and experienced web developers dedicated to creating high-quality, responsive, and user-friendly websites ',
   },
+  
 ];

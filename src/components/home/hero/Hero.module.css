@@ -34,9 +34,19 @@
   height: 600px;
   opacity: 0.4;
   pointer-events: auto;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  /* backdrop-filter: blur(40px); */
+  /* -webkit-backdrop-filter: blur(40px); */
 }
+
+.left .cardText,
+.right .cardText,
+.left .cardContent,
+.right .cardContent,
+.left .progressBar,
+.right .progressBar {
+  display: none;  /* Hide text, buttons, and progress bars */
+}
+
 
 /* Active card */
 .active {

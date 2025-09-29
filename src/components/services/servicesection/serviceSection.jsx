@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
-import { FaPlus, FaTimes } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import {
+  FaPlus, FaTimes,
+  FaDesktop, FaChartLine, FaMobileAlt, FaDatabase,
+} from 'react-icons/fa';
+
+const iconMap = {
+  FaDesktop: <FaDesktop />,
+  FaChartLine: <FaChartLine />,
+  FaMobileAlt: <FaMobileAlt />,
+  FaDatabase: <FaDatabase />,
+  // Add more icons if needed
+};
 
 const ServiceSection = ({ heading, services }) => {
-  const [expandedIndex, setExpandedIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleToggle = (index) => {
-    setExpandedIndex((prev) => (prev === index ? null : index));
+    setExpandedIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
   return (
@@ -13,21 +33,18 @@ const ServiceSection = ({ heading, services }) => {
       <h2 className="text-2xl md:text-4xl font-semibold font-serif mb-10 text-gray-900 text-center md:text-left">
         {heading}
       </h2>
-
-      <div className="relative flex overflow-x-auto space-x-2 md:space-x-6">
+      <div className="flex overflow-x-auto space-x-2 md:space-x-6 relative">
         {services.map((service, index) => {
           const isExpanded = expandedIndex === index;
-
-          // Responsive widths
-          const baseWidth = 200; // collapsed width for small screens
-          const expandedWidth = 350; // expanded width for small screens
-          const baseWidthMd = 250; // collapsed width md+
-          const expandedWidthMd = 450; // expanded width md+
+          const baseWidth = 200;
+          const expandedWidth = 350;
+          const baseWidthMd = 250;
+          const expandedWidthMd = 450;
 
           const widthStyle = {
-            width: isExpanded 
-              ? (window.innerWidth >= 768 ? expandedWidthMd : expandedWidth) 
-              : (window.innerWidth >= 768 ? baseWidthMd : baseWidth),
+            width: isExpanded
+              ? (windowWidth >= 768 ? expandedWidthMd : expandedWidth)
+              : (windowWidth >= 768 ? baseWidthMd : baseWidth),
             minHeight: 250,
           };
 
@@ -35,15 +52,16 @@ const ServiceSection = ({ heading, services }) => {
             <div
               key={index}
               onClick={() => handleToggle(index)}
-              className={`relative cursor-pointer flex-shrink-0 transition-all duration-500 ease-in-out bg-white rounded-lg shadow-md
-                ${isExpanded ? 'z-20' : 'z-0'}
-                ${index !== 0 ? 'border-l border-gray-300' : ''}
-              `}
+              className={`relative cursor-pointer flex-shrink-0 transition-all duration-500 ease-in-out bg-white rounded-lg shadow-md ${
+                isExpanded ? 'z-20' : 'z-0'
+              } ${index !== 0 ? 'border-l border-gray-300' : ''}`}
               style={widthStyle}
             >
               <div className="p-6 h-full flex flex-col justify-between">
                 <div>
-                  <div className="mb-3 text-3xl text-blue-600">{service.icon}</div>
+                  <div className="mb-3 text-3xl text-blue-600">
+                    {iconMap[service.icon] || null}
+                  </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
                   {isExpanded && (
                     <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
