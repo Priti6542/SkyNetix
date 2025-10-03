@@ -33,7 +33,8 @@ export default function HomeFeature() {
     <FaMobileAlt size={36} className="text-blue-500 mb-2" />,
   ];
 
-  const [openIdx, setOpenIdx] = useState(null);
+  // const [openIdx, setOpenIdx] = useState(null);
+  const [openIdx, setOpenIdx] = useState(0); // 0 means the first card is always open by default
 
   return (
     <>
@@ -42,30 +43,31 @@ export default function HomeFeature() {
         * { font-family: 'Poppins', sans-serif; }
       `}</style>
 
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-center mx-auto mt-8 text-gray-900">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-center mx-auto mt-20 text-gray-900">
         Our Features
       </h1>
       <p className="text-base text-gray-600 text-center mt-2 max-w-xl mx-auto">
         Here are some typical services of SkyNetics Software Solutions Pvt. Ltd.
       </p>
 
-      <div className="flex flex-col md:flex-row items-stretch w-full max-w-7xl mx-auto mt-10 bg-white rounded-xl overflow-hidden shadow mb-20">
+      <div className="flex flex-col md:flex-row items-stretch w-full max-w-7xl mx-auto mt-10 rounded-xl overflow-hidden shadow mb-20"
+        style={{
+          // background: 'linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%)',
+        }}
+      >
         {cardItems.map((item, idx) => {
           const isOpen = idx === openIdx;
           return (
             <motion.div
               key={item.title || idx}
-              className="flex flex-col relative p-8 min-h-[210px] justify-between
-          border-b md:border-b-0 md:border-r last:border-none border-gray-200 bg-white cursor-pointer rounded-lg shadow-md"
+              className="flex flex-col relative p-8 min-h-[210px] justify-between border-b md:border-b-0 md:border-r last:border-none border-gray-200 bg-white cursor-pointer rounded-lg shadow-md"
               layout
               style={{
-                // On mobile (column) make each card full width, else use the flexBasis logic for row
                 flexBasis: isOpen ? (window.innerWidth >= 768 ? "60%" : "100%") : (window.innerWidth >= 768 ? "20%" : "100%"),
                 transition: "flex-basis 0.5s ease",
                 width: window.innerWidth < 768 ? "100%" : "auto",
               }}
             >
-              {/* Card header */}
               <div>
                 {cardIcons[idx]}
                 <h3 className="mt-1 text-lg font-bold text-gray-900 w-60 md:w-auto">{item.title}</h3>
@@ -81,8 +83,6 @@ export default function HomeFeature() {
                   </motion.p>
                 )}
               </div>
-
-              {/* Toggle Button */}
               <button
                 aria-label={isOpen ? "Collapse details" : "Expand details"}
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
@@ -94,8 +94,6 @@ export default function HomeFeature() {
           );
         })}
       </div>
-
-
     </>
   );
 }

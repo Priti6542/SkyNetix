@@ -107,7 +107,7 @@ const ContactClients = () => {
             variants={fadeUp}
           >
             {/* Industry Filter */}
-            <div>
+            {/* <div>
               <label htmlFor="industry" className="block mb-1 font-medium text-gray-500">
                 Industries
               </label>
@@ -121,10 +121,10 @@ const ContactClients = () => {
                   <option key={industry}>{industry}</option>
                 ))}
               </select>
-            </div>
+            </div> */}
 
             {/* Service Filter */}
-            <div>
+            {/* <div>
               <label htmlFor="services" className="block mb-1 font-medium text-gray-500">
                 Services
               </label>
@@ -138,7 +138,7 @@ const ContactClients = () => {
                   <option key={service}>{service}</option>
                 ))}
               </select>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Client Grid */}

@@ -48,10 +48,10 @@ const Services = () => {
   return (
     <div
       className="
-        w-full max-w-6xl mx-auto bg-white border shadow-lg mt-8 p-5 rounded-lg
+        w-full max-w-6xl mx-auto bg-white border shadow-lg mt-8 rounded-lg
         flex flex-col md:flex-row gap-6
         sm:p-6 md:p-8
-        h-[100vh] md:h-auto overflow-hidden md:overflow-visible
+        h-[10vh] md:h-auto overflow-hidden md:overflow-visible
       "
     >
       {/* Left Panel - Categories */}
@@ -122,12 +122,73 @@ const ServiceCard = ({ icon, title, desc }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
-    if (title === 'App Development') {
+  switch (title) {
+    // Engineering
+    case 'App Development':
       navigate('/services/app-development');
-    } else if (title === 'Legacy Modernization') {
+      break;
+    case 'Legacy Modernization':
       navigate('/services/legacy-modernization');
-    }
-  };
+      break;
+    case 'Cloud Migration':
+      navigate('/services/cloud-migration');
+      break;
+    case 'Code Optimization':
+      navigate('/services/code-optimization');
+      break;
+    case 'Testing Services':
+      navigate('/services/testing-services');
+      break;
+    case 'API Development':
+      navigate('/services/api-development');
+      break;
+
+    // AI & Data
+    case 'Data Analytics':
+      navigate('/services/data-analytics');
+      break;
+    case 'Machine Learning':
+      navigate('/services/machine-learning');
+      break;
+    case 'AI Integration':
+      navigate('/services/ai-integration');
+      break;
+    case 'Deep Learning':
+      navigate('/services/deep-learning');
+      break;
+    case 'Big Data':
+      navigate('/services/big-data');
+      break;
+    case 'NLP Services':
+      navigate('/services/nlp-services');
+      break;
+
+    // Cloud
+    case 'Cloud Consulting':
+      navigate('/services/cloud-consulting');
+      break;
+    case 'DevOps Automation':
+      navigate('/services/devops-automation');
+      break;
+    case 'Monitoring & Ops':
+      navigate('/services/monitoring-ops');
+      break;
+    case 'Security Audit':
+      navigate('/services/security-audit');
+      break;
+    case 'Multi-Cloud Support':
+      navigate('/services/multicloud-support');
+      break;
+    case 'Infrastructure as Code':
+      navigate('/services/infrastructure-as-code');
+      break;
+
+    default:
+      console.warn('Service not mapped:', title);
+      break;
+  }
+};
+
 
   return (
     <motion.div

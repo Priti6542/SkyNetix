@@ -1,0 +1,32 @@
+export const scrollSections = [
+  {
+    id: "StoriesUnveiled",
+    title: "Stories Unveiled",
+    subtitle: "Capture the essence of family celebration.",
+    desc: "Share the moments that weave your family tale.",
+    imgClass: "FirstPic",
+    imgAlt: "Stories Unveiled",
+    imgSrcDesktop: "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/stories-with-scroll-driven/images/img-desktop-3.avif",
+    imgSrcMobile: "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/stories-with-scroll-driven/images/img-mobile-3.avif",
+  },
+  {
+    id: "CelebratingLifeTogether",
+    title: "Celebrating Life Together",
+    subtitle: "Embrace the significance of shared joy.",
+    desc: "In every celebration, find the heartwarming stories.",
+    imgClass: "SecondPic",
+    imgAlt: "Celebrating Life Together",
+    imgSrcDesktop: "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/stories-with-scroll-driven/images/img-desktop-2.avif",
+    imgSrcMobile: "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/stories-with-scroll-driven/images/img-mobile-2.avif",
+  },
+  {
+    id: "TheArtofGiving",
+    title: "The Art of Giving",
+    subtitle: "Explore the stories within each present.",
+    desc: "Every gift is a chapter in your family's narrative.",
+    imgClass: "ThirdPic",
+    imgAlt: "The Art of Giving",
+    imgSrcDesktop: "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/stories-with-scroll-driven/images/img-desktop-1.avif",
+    imgSrcMobile: "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/stories-with-scroll-driven/images/img-mobile-1.avif",
+  },
+];

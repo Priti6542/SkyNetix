@@ -1,34 +1,114 @@
-.heroSection {
-  background: linear-gradient(-45deg, #f1cdfd, #d3afe0, #b1a8b6, #f2def5);
-  background-size: 600% 600%;
-  animation: gradientWave 20s ease-in-out infinite;
-  padding-top: 1.5rem; /* pt-6 */
-  padding-left: 0.75rem; /* px-3 */
-  padding-right: 0.75rem;
-  transition: all 0.3s ease;
+/* Hero.module.css */
+
+.Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f9fafb, #e4f0f6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
-@media (min-width: 640px) {
-  .heroSection {
-    padding-left: 2.5rem; /* sm:px-10 */
-    padding-right: 2.5rem;
-  }
+.PhotoCard {
+  flex: 1 1 400px;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: relative;
+  background: #fff;
 }
 
-@keyframes gradientWave {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.PhotoCard img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.PhotoCard img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.Pagination {
+  margin-top: 12px;
+  text-align: center;
+  user-select: none;
+}
+
+.TextButton {
+  font-weight: 600;
+  color: #555;
+  padding: 8px 14px;
+  margin: 6px 10px;
+  border-radius: 24px;
+  background-color: rgba(0, 123, 255, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.TextButton:hover,
+.TextButton:focus {
+  cursor: pointer;
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.DotActive {
+  color: #0056b3 !important;
+  background-color: rgba(0, 123, 255, 0.3) !important;
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+.Content {
+  flex: 1 1 350px;
+  max-width: 500px;
+  background: white;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  user-select: text;
+  text-align: center;
+}
+
+.Heading {
+  font-size: 2.4rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  color: #203864;
+}
+
+.Subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #475569;
+  font-style: italic;
+}
+
+.Description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.35s ease-in;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.35s ease-out;
 }

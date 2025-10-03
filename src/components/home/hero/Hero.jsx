@@ -1,29 +1,17 @@
-// Hero.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Hero.module.css';
-import { HeroData } from './HeroData';
-import { Link } from 'react-router-dom';
+import { HeroData } from './HeroData';  // Import data
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [animationKey, setAnimationKey] = useState(0); // for restarting animation
 
+  const goPrev = () =>
+    setCurrentIndex((prev) => (prev === 0 ? HeroData.length - 1 : prev - 1));
+  const goNext = () =>
+    setCurrentIndex((prev) => (prev === HeroData.length - 1 ? 0 : prev + 1));
   const handleCardClick = (index) => {
-    if (index !== currentIndex) {
-      setCurrentIndex(index);
-      setAnimationKey(prev => prev + 1); // reset progress bar animation
-    }
+    if (index !== currentIndex) setCurrentIndex(index);
   };
-
-  // Auto-scroll with progress reset
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % HeroData.length);
-      setAnimationKey(prev => prev + 1); // reset progress bar animation
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className={styles.heroWrapper}>
@@ -39,66 +27,48 @@ const Hero = () => {
             className={`${styles.card} ${styles[position]}`}
             onClick={() => handleCardClick(index)}
           >
-            <div className={styles.cardText}>
-              <h1>
-                {item.title[0]} <br />
-                {item.title[1]}
-              </h1>
+            {(position === 'left' || position === 'right') && (
+              <div className={styles.verticalLabel}>{item.label}</div>
+            )}
 
-              <p>
-                {item.description[0]} <br />
-                {item.description[1]}<br />
-              </p>
-              <div className={styles.content}>
-                <div className={styles.text}>{item.text && item.text}</div>
-                <div className={styles.logos}>
-                  {/* <strong>Logos:</strong> */}
-                  <div className={styles.logoContainer}>
-                    {Array.isArray(item.logos) && item.logos.map((logo, index) => (
-                      <img key={index} src={logo} alt={`Logo ${index + 1}`} className={styles.logoImage} />
+            {position === 'active' && (
+              <>
+                <div className={styles.cardText}>
+                  <h1>
+                    {item.title[0]} <br /> {item.title[1]}
+                  </h1>
+                  <p>{item.description[0]}</p>
+                  <div className={styles.logos}>
+                    {item.logos?.map((logo, i) => (
+                      <img key={i} src={logo} alt={`Logo ${i + 1}`} />
                     ))}
-
                   </div>
                 </div>
 
-
-                {item.buttonText && (
-                  <div className={styles.cardContent}>
-                    <button>{item.buttonText}</button>
+                {/* <div className={styles.floatingCard}>
+                  <img src={item.floatingCard?.img} alt="Consultation" />
+                  <div>
+                    <p>{item.floatingCard?.text}</p>
+                    <a href={item.floatingCard?.buttonLink} className={styles.bookNow}>
+                      {item.floatingCard?.buttonText} &#8594;
+                    </a>
                   </div>
-                )}
-
-                {/* {item.services && (
-                  <div className={styles.services}>
-                    <strong>Services:</strong>
-                    <ul>
-                      {item.services.map((service, index) => (
-                        <li key={index}>
-                          <Link to={`/services/${service.slug}`} className="text-blue-600 hover:underline">
-                            {service.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )} */}
-
-              </div>
-
-              {/* Progress bar only for active card */}
-              {/* {index === currentIndex && (
-                <div className={styles.progressBar} key={animationKey}>
-                  <div className={styles.progressFill} />
-                </div>
-              )} */}
-            </div>
+                </div> */}
+              </>
+            )}
 
             <div className={styles.cardImage}>
-              <img src={item.image} alt={item.title} />
+              <img src={item.image} alt={item.label || 'Hero Image'} />
             </div>
           </div>
         );
       })}
+      <button className={styles.arrowLeft} onClick={goPrev} aria-label="Previous Slide">
+        &#10094;
+      </button>
+      <button className={styles.arrowRight} onClick={goNext} aria-label="Next Slide">
+        &#10095;
+      </button>
     </div>
   );
 };

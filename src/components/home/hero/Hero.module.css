@@ -1,204 +1,243 @@
 .heroWrapper {
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  height: 610px;
+  gap: 25px;
+  padding: 0 1rem;
   overflow-x: auto;
-  margin-top: 20px;
-  padding-left: 1rem;
-  /* Mobile padding */
-  padding-right: 1rem;
-  /* Mobile padding */
-  scroll-padding-left: 1rem;
-  /* Tailwind equivalent for smooth scroll */
+  scroll-behavior: smooth;
+  
 }
 
-/* Cards */
 .card {
   position: relative;
-  transition: all 0.4s ease;
-  cursor: pointer;
   border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 300px;
-  height: 500px;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+  /* margin-top: 60px; */
 }
 
-/* Side cards */
 .left,
 .right {
-  width: 90px;
+  width: 50px;
   height: 600px;
   opacity: 0.4;
+  background-color: rgba(10, 20, 40, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
   pointer-events: auto;
-  /* backdrop-filter: blur(40px); */
-  /* -webkit-backdrop-filter: blur(40px); */
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.left .cardText,
-.right .cardText,
-.left .cardContent,
-.right .cardContent,
-.left .progressBar,
-.right .progressBar {
-  display: none;  /* Hide text, buttons, and progress bars */
+.verticalLabel {
+  color: white;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  user-select: none;
+  text-align: center;
 }
 
-
-/* Active card */
 .active {
   width: 70%;
   height: 580px;
   opacity: 1;
-  pointer-events: auto;
   transform: scale(1.05);
-}
-
-/* Image Section */
-.cardImage {
-  width: 100%;
-  height: 100%;
+  pointer-events: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .cardImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: inherit;
+  display: block;
 }
 
-/* Text */
 .cardText {
-  padding: 1rem;
-  color: #fff;
   position: absolute;
-  top: 0;
-  z-index: 2;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), transparent);
+  align-items: center;
+  justify-content: center;
+  top: 10%;
+  left: 20%;
+  color: white;
+  z-index: 10;
+  max-width: 500px;
+  pointer-events: none;
 }
 
 .cardText h1 {
-  font-size: 3rem;
+  margin: 0 0 15px;
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 1.2;
   white-space: pre-line;
-  margin-bottom: 0.5rem;
-  justify-content: center;
-  margin-top: 10%;
-  margin-left: 12%;
 }
 
 .cardText p {
-  font-size: 0.9rem;
-  margin-left: 20%;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  max-width: 80%;
+  margin: 0;
+  pointer-events: none;
 }
 
-/* Progress Bar */
-.progressBar {
-  width: 100%;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-top: 0.5rem;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.progressBar div {
-  height: 100%;
-  background-color: #00ffcc;
-  transition: width 0.3s ease;
-}
-
-/* Button */
-.cardContent {
-  padding: 1rem;
-}
-
-.cardContent button {
-  padding: 0.6rem 1.2rem;
-  background: #f9f9f9;
-  color: #000;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-left: 20%;
-}
-
-/* Text & Logos */
-.text {
-  font-size: 40px;
-  margin-left: 20%;
-  margin-top: 25px;
-}
-
-.logoContainer {
+.logos {
+  margin-top: 32px;
   display: flex;
   gap: 40px;
-  margin-left: 20%;
+  pointer-events: none;
 }
 
-/* Responsive - Tablets and smaller */
+.logos img {
+  height: 36px;
+  user-select: none;
+}
+
+.floatingCard {
+  position: absolute;
+  right: 50px;
+  top: 25%;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  width: 280px;
+  height: 90px;
+  padding: 15px 16px;
+  gap: 15px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+  pointer-events: auto;
+  z-index: 200;
+}
+
+.floatingCard img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+  user-select: none;
+    z-index: 200;
+
+}
+
+.floatingCard p {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+  user-select: none;
+}
+
+.bookNow {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  bottom: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  padding: 1rem;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  background-color: white;
+}
 
 
-/* Tablet screens: 768px - 1024px */
-@media (max-width: 767px) {
+/* Position left arrow slightly left of center */
+.arrowLeft {
+  left: 45%;
+  transform: translateX(-100%);
+}
+
+/* Position right arrow slightly right of center */
+.arrowRight {
+  left: 55%;
+  transform: translateX(0%);
+}
+
+
+.left .cardText,
+.right .cardText,
+.left .floatingCard,
+.right .floatingCard,
+.left .logos,
+.right .logos,
+.right .floatingCard img,
+.left .floatingCard img {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .heroWrapper {
-    display: flex;
+    height: 500px;
+    gap: 16px;
     overflow-x: auto;
-    height: 500px !important;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    scroll-padding-left: 1rem;
-    justify-content: flex-start;
-
-    /* Hide scrollbar */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE 10+ */
-  }
-
-  .heroWrapper::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
   }
 
   .card {
-    scroll-snap-align: center;
-    flex-shrink: 0;
     width: 80vw !important;
-    /* card fills 80% of viewport */
     max-width: 320px;
     height: 470px !important;
-    border-radius: 20px;
-    background: rgba(40, 40, 40, 0.95);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    /* subtle card border */
+  }
+  
+
+  .left,
+  .right {
+    display: none;
   }
 
-  /* Side cards visible and scrollable */
-.left,
-.right {
-  opacity: 0.4;             /* semi-transparent */
-  pointer-events: auto;     /* allow interaction */
-  width: 90px;              /* fixed width */
-  height: 600px;            /* fixed height */
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  flex-shrink: 0;           /* prevent shrinking in horizontal scroll */
-  scroll-snap-align: center; /* align them in snap scroll */
-}
+  .floatingCard {
+    right: 2rem !important;
+    top: auto !important;
+    bottom: -95px !important;
+    width: 90vw;
+    justify-content: center;
+    padding: 12px;
+  }
 
+  .arrowLeft,
+  .arrowRight {
+    display: none;
+  }
 }

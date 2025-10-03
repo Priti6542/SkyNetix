@@ -1,7 +1,7 @@
 import { sectors } from './sectorsData';
 
 const SectorsScroll = () => (
-  <section className="py-12 bg-gray-50">
+  <section className="py-12  mt-300px bg-gray-50 ">
     <div className="max-w-6xl mx-auto px-4">
       <h2 className="text-4xl font-serif font-medium mb-2">
         Game-changing solutions

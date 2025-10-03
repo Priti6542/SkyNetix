@@ -1,11 +1,185 @@
-import React, { useState, useRef, useEffect } from "react";
+// import React, { useState, useRef, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import skynetix from "../../assets/skynetix.png";
+// import Services from "../services/Services";
+
+// const Navbar = () => {
+//   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+//   const [showServicesPopup, setShowServicesPopup] = useState(false);
+//   const popupRef = useRef(null);
+
+//   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
+//   // Close popup on outside click
+//   useEffect(() => {
+//     if (!showServicesPopup) return;
+//     const handleClickOutside = (event) => {
+//       if (popupRef.current && !popupRef.current.contains(event.target)) {
+//         setShowServicesPopup(false);
+//       }
+//     };
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => document.removeEventListener("mousedown", handleClickOutside);
+//   }, [showServicesPopup]);
+
+//   // Menu links (desktop and mobile)
+//   const navLinks = [
+//     { to: "/", label: "Home" },
+//     { to: "/about", label: "About" },
+//     { to: "/clients", label: "Clients" },
+//     { to: "/healthcare", label: "Healthcare" },
+//     { to: "/contact", label: "ContactUS" },
+//     // { to: "/services", label: "Services" },
+//   ];
+
+//   return (
+//     <nav className="top-0 left-0 right-0 z-50 text-black px-6 py-4 border-b border-gray-300 bg-white overflow-hidden align-center">
+//       <div className="max-w-7xl mx-auto flex items-center justify-between">
+//         {/* Logo on the left */}
+//         <Link to="/" className="flex items-center">
+//           <img src={skynetix} alt="SkyNetix Logo" className="h-10 w-auto select-none" draggable={false} />
+//         </Link>
+
+//         {/* Centered nav links */}
+//         <ul className="hidden md:flex flex-1 justify-center space-x-6 font-medium text-medium">
+//           {/* We map all except last link except ContactUS separately */}
+//           {navLinks
+//             .filter((link) => link.label !== "ContactUS")
+//             .map((link) => (
+//               <li key={link.label}>
+//                 <Link to={link.to} className="hover:text-indigo-600 inline-block">
+//                   {link.label}
+//                 </Link>
+//               </li>
+//             ))}
+
+//           {/* Services button */}
+//           <li>
+//             <button onClick={() => setShowServicesPopup(true)} className="hover:text-indigo-600 transition font-medium">
+//               Services
+//             </button>
+//           </li>
+//           {/* ContactUS as last item */}
+//           <li key="ContactUS" className="ml-9">
+//             <Link
+//               to="/contact"
+//               className="inline-block px-6 py-2 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-500 hover:shadow-xl transition-all duration-300"
+//             >
+//               Contact Us
+//             </Link>
+//           </li>
+
+
+
+//         </ul>
+
+//         {/* Mobile hamburger button */}
+//         <button
+//           onClick={toggleMobileMenu}
+//           className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+//           aria-label="Toggle menu"
+//         >
+//           <svg
+//             className="h-6 w-6"
+//             xmlns="http://www.w3.org/2000/svg"
+//             fill="none"
+//             viewBox="0 0 24 24"
+//             stroke="currentColor"
+//             strokeWidth={2}
+//           >
+//             {mobileMenuOpen ? (
+//               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+//             ) : (
+//               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+//             )}
+//           </svg>
+//         </button>
+//       </div>
+
+
+//       {/* Mobile Menu */}
+//       {mobileMenuOpen && (
+//         <ul className="md:hidden flex flex-col space-y-4 mt-4 px-6 pb-6 border-t border-gray-300 text-medium font-medium">
+//           {navLinks.map((link) => (
+//             <li key={link.label}>
+//               <Link to={link.to} className="block hover:text-indigo-600" onClick={() => setMobileMenuOpen(false)}>
+//                 {link.label}
+//               </Link>
+//             </li>
+//           ))}
+//           <li>
+//             <button
+//               onClick={() => {
+//                 setShowServicesPopup(true);
+//                 setMobileMenuOpen(false); // close mobile menu when opening popup
+//               }}
+//               className="block hover:text-indigo-600 font-medium"
+//             >
+//               Services
+//             </button>
+//           </li>
+//         </ul>
+//       )}
+
+//       {/* Animated Services Popup modal */}
+//       {showServicesPopup && (
+//         <div
+//           className="fixed inset-0 z-50 flex justify-center bg-black/50 backdrop-blur-sm animate-fadeIn"
+//           role="dialog"
+//           aria-modal="true"
+//           aria-labelledby="services-popup-title"
+//           tabIndex={-1}
+//           onKeyDown={(e) => {
+//             if (e.key === "Escape") setShowServicesPopup(false);
+//           }}
+//         >
+//           <div
+//             ref={popupRef}
+//             className="relative bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 w-[90vw] max-w-3xl transform transition-transform duration-300 scale-95 animate-fadeIn"
+//             style={{ animationFillMode: 'forwards', animationName: 'fadeInScale' }}
+//           >
+//             <button
+//               type="button"
+//               className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-2xl focus:outline-none"
+//               onClick={() => setShowServicesPopup(false)}
+//               aria-label="Close popup"
+//             >
+//               ×
+//             </button>
+//             <h2 id="services-popup-title" className="sr-only">Services Information</h2>
+//             <Services />
+//           </div>
+
+//           <style jsx>{`
+//       @keyframes fadeInScale {
+//         from {
+//           opacity: 0;
+//           transform: scale(0.95);
+//         }
+//         to {
+//           opacity: 1;
+//           transform: scale(1);
+//         }
+//       }
+//     `}</style>
+//         </div>
+//       )}
+
+
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import skynetix from "../../assets/skynetix.png";
 import Services from "../services/Services";
 
-const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showServicesPopup, setShowServicesPopup] = useState(false);
+const Navbar = ({ showServicesPopup, setShowServicesPopup }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const popupRef = useRef(null);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
@@ -20,55 +194,36 @@ const Navbar = () => {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showServicesPopup]);
-
-  // Menu links (desktop and mobile)
-  const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/clients", label: "Clients" },
-    { to: "/healthcare", label: "Healthcare" },
-    { to: "/contact", label: "ContactUS" },
-    // { to: "/services", label: "Services" },
-  ];
+  }, [showServicesPopup, setShowServicesPopup]);
 
   return (
-    // <nav className="text-black px-6 py-4 border-b border-gray-300 relative z-50 bg-white">
-    <nav className="text-black px-6 py-4 border-b border-gray-300 relative z-50 bg-white overflow-hidden">
-
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        {/* <div className="text-2xl font-bold tracking-wide select-none"> */}
+    <nav className="top-0 left-0 right-0 z-50 text-black px-6 py-4 border-b border-gray-300 bg-white overflow-hidden align-center">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center">
-  <img
-    src={skynetix}
-    alt="SkyNetix Logo"
-    className="h-10 w-auto select-none"
-    draggable={false}
-  />
-</Link>
-        {/* </div> */}
+          <img src={skynetix} alt="SkyNetix Logo" className="h-10 w-auto select-none" draggable={false} />
+        </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 text-medium font-medium">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              {/* <Link to={link.to} className="hover:text-indigo-600">{link.label}</Link> */}
-              <Link to={link.to} className="hover:text-indigo-600 inline-block">{link.label}</Link>
-
-            </li>
-          ))}
+        <ul className="hidden md:flex flex-1 justify-center space-x-6 font-medium text-medium">
+          <li><Link to="/" className="hover:text-indigo-600 inline-block">Home</Link></li>
+          <li><Link to="/about" className="hover:text-indigo-600 inline-block">About</Link></li>
+          <li><Link to="/clients" className="hover:text-indigo-600 inline-block">Clients</Link></li>
+          <li><Link to="/healthcare" className="hover:text-indigo-600 inline-block">Healthcare</Link></li>
           <li>
-            <button
-              onClick={() => setShowServicesPopup(true)}
-              className="hover:text-indigo-600 transition font-medium"
-            >
+            <button onClick={() => setShowServicesPopup(true)} className="hover:text-indigo-600 transition font-medium">
               Services
             </button>
           </li>
+          <li className="ml-9">
+            <Link
+              to="/contact"
+              className="inline-block px-6 py-2 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-500 hover:shadow-xl transition-all duration-300"
+            >
+              Contact Us
+            </Link>
+          </li>
         </ul>
 
-        {/* Mobile hamburger button */}
+        {/* Mobile menu hamburger */}
         <button
           onClick={toggleMobileMenu}
           className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -77,7 +232,10 @@ const Navbar = () => {
           <svg
             className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
           >
             {mobileMenuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -88,46 +246,77 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {mobileMenuOpen && (
         <ul className="md:hidden flex flex-col space-y-4 mt-4 px-6 pb-6 border-t border-gray-300 text-medium font-medium">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <Link to={link.to} className="block hover:text-indigo-600" onClick={() => setMobileMenuOpen(false)}>
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          <li><Link to="/" className="block hover:text-indigo-600" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/about" className="block hover:text-indigo-600" onClick={() => setMobileMenuOpen(false)}>About</Link></li>
+          <li><Link to="/clients" className="block hover:text-indigo-600" onClick={() => setMobileMenuOpen(false)}>Clients</Link></li>
+          <li><Link to="/healthcare" className="block hover:text-indigo-600" onClick={() => setMobileMenuOpen(false)}>Healthcare</Link></li>
           <li>
             <button
               onClick={() => {
                 setShowServicesPopup(true);
-                setMobileMenuOpen(false); // close mobile menu when opening popup
+                setMobileMenuOpen(false);
               }}
               className="block hover:text-indigo-600 font-medium"
             >
               Services
             </button>
           </li>
+          <li>
+            <Link to="/contact" className="block hover:text-indigo-600" onClick={() => setMobileMenuOpen(false)}>
+              Contact Us
+            </Link>
+          </li>
         </ul>
       )}
 
-      {/* Animated Services Popup modal */}
+      {/* Services popup modal */}
       {showServicesPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 animate-fadeIn">
+        <div
+          className="fixed inset-0 z-50 flex justify-center bg-black/50 backdrop-blur-sm animate-fadeIn"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="services-popup-title"
+          tabIndex={-1}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowServicesPopup(false);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setShowServicesPopup(false);
+          }}
+        >
           <div
             ref={popupRef}
-            className="relative bg-white rounded-xl shadow-2xl p-8 w-[90vw] max-w-3xl transition-transform duration-300 animate-fadeIn"
+            className="relative bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 w-[90vw] max-w-3xl max-h-[90vh] overflow-auto transform transition-transform duration-300 scale-95 animate-fadeIn"
+            style={{ animationFillMode: 'forwards', animationName: 'fadeInScale' }}
+            aria-labelledby="services-popup-title"
           >
             <button
-              className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-2xl"
+              type="button"
+              className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-2xl focus:outline-none"
               onClick={() => setShowServicesPopup(false)}
-              aria-label="Close"
+              aria-label="Close popup"
             >
               ×
             </button>
+            <h2 id="services-popup-title" className="sr-only">Services Information</h2>
             <Services />
           </div>
+
+          <style jsx>{`
+            @keyframes fadeInScale {
+              from {
+                opacity: 0;
+                transform: scale(0.95);
+              }
+              to {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+          `}</style>
         </div>
       )}
     </nav>

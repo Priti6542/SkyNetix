@@ -11,61 +11,99 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white-900 text-gray-300 px-4 pt-10 pb-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-black">
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300 px-6 pt-16 pb-8 mt-20">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         {/* About Section */}
         <div>
-          <img src={about.logo} alt="SkyNetix Logo" className="h-10 mb-3" />
-          <h2 className="text-lg font-semibold text-black mb-1">{about.title}</h2>
-          <p className="mb-4 text-sm">{about.description}</p>
-          <div className="flex space-x-3 mt-2">
+          <img src={about.logo} alt="SkyNetix Logo" className="h-12 mb-4" />
+          <h2 className="text-xl font-semibold text-white mb-2">{about.title}</h2>
+          <p className="mb-6 text-sm leading-relaxed">{about.description}</p>
+          <div className="flex space-x-4">
             {about.socialLinks.map(({ icon, url }) => {
               const iconMap = {
-                facebook: <FaFacebookF size={20} />,
-                twitter: <FaTwitter size={20} />,
-                instagram: <FaInstagram size={20} />,
-                linkedin: <FaLinkedin size={20} />
+                facebook: <FaFacebookF size={18} />,
+                twitter: <FaTwitter size={18} />,
+                instagram: <FaInstagram size={18} />,
+                linkedin: <FaLinkedin size={18} />
               };
               return (
-                <a key={icon} href={url} target="_blank" rel="noopener noreferrer" className="hover:text-white transform hover:scale-110 transition">
+                <a
+                  key={icon}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-gray-800 hover:bg-indigo-600 transition-colors transform hover:scale-110"
+                >
                   {iconMap[icon]}
                 </a>
               );
             })}
           </div>
         </div>
+
         {/* Useful Links */}
         <div>
-          <h2 className="text-lg font-semibold text-white mb-3">Useful Links</h2>
-          <ul className="space-y-2">
+          <h2 className="text-lg font-semibold text-white mb-4 relative after:block after:h-[2px] after:w-12 after:bg-indigo-500 after:mt-1">
+            Useful Links
+          </h2>
+          <ul className="space-y-2 text-sm">
             {usefulLinks.map(link => (
               <li key={link.title}>
-                <a href={link.path} className="hover:text-white hover:underline transition">{link.title}</a>
+                <a
+                  href={link.path}
+                  className="hover:text-indigo-400 hover:translate-x-1 transition inline-block"
+                >
+                  {link.title}
+                </a>
               </li>
             ))}
           </ul>
         </div>
+
         {/* Services */}
         <div>
-          <h2 className="text-lg font-semibold text-white mb-3">Our Services</h2>
-          <ul className="space-y-2">
+          <h2 className="text-lg font-semibold text-white mb-4 relative after:block after:h-[2px] after:w-12 after:bg-indigo-500 after:mt-1">
+            Our Services
+          </h2>
+          <ul className="space-y-2 text-sm">
             {services.map(service => (
-              <li key={service} className="hover:text-white transition">{service}</li>
+              <li
+                key={service}
+                className="hover:text-indigo-400 hover:translate-x-1 transition inline-block"
+              >
+                {service}
+              </li>
             ))}
           </ul>
         </div>
+
         {/* Contact */}
         <div>
-          <h2 className="text-lg font-semibold text-white mb-3">Contact Us</h2>
-          <p className="text-sm mb-2">{contact.address}</p>
-          <p className="text-sm mb-2">Phone: <a href={`tel:${contact.phone}`} className="hover:text-white transition">{contact.phone}</a></p>
-          <p className="text-sm">Email: <a href={`mailto:${contact.email}`} className="hover:text-white transition">{contact.email}</a></p>
+          <h2 className="text-lg font-semibold text-white mb-4 relative after:block after:h-[2px] after:w-12 after:bg-indigo-500 after:mt-1">
+            Contact Us
+          </h2>
+          <p className="text-sm mb-3">{contact.address}</p>
+          <p className="text-sm mb-2">
+            Phone:{" "}
+            <a href={`tel:${contact.phone}`} className="hover:text-indigo-400">
+              {contact.phone}
+            </a>
+          </p>
+          <p className="text-sm">
+            Email:{" "}
+            <a href={`mailto:${contact.email}`} className="hover:text-indigo-400">
+              {contact.email}
+            </a>
+          </p>
         </div>
       </div>
-      <div className="border-t border-gray-700 mt-8 pt-6 text-center text-xs text-gray-400">
-        © 2025 SkyNetix Software Solutions Pvt. Ltd. All rights reserved.
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-800 mt-12 pt-6 text-center text-xs text-gray-500">
+        © {new Date().getFullYear()} <span className="text-indigo-400">SkyNetix Software Solutions Pvt. Ltd.</span> — All rights reserved.
       </div>
     </footer>
   );
 };
+
 export default Footer;
