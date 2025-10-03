@@ -206,38 +206,94 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
   .heroWrapper {
     height: 500px;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    gap: 15px;
   }
 
   .card {
-    width: 80vw !important;
-    max-width: 320px;
-    height: 470px !important;
+    width: 80vw; /* make cards adapt to viewport width */
   }
-  
+
+  .active {
+    width: 85%;
+    height: 480px;
+    transform: scale(1);
+  }
 
   .left,
   .right {
-    display: none;
-  }
-
-  .floatingCard {
-    right: 2rem !important;
-    top: auto !important;
-    bottom: -95px !important;
-    width: 90vw;
-    justify-content: center;
-    padding: 12px;
+    width: 40px;
+    height: 480px;
   }
 
   .arrowLeft,
   .arrowRight {
-    display: none;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    font-size: 1.3rem;
   }
 }
+
+@media (max-width: 640px) {
+  /* Smaller devices */
+  .heroWrapper {
+    margin-top: 20px;
+    flex-direction: column;
+    height: auto;
+    padding: 0 0.5rem;
+    gap: 10px;
+  }
+
+  .card,
+  .active {
+    width: 90vw;
+    height: 350px;
+    transform: scale(1);
+  }
+
+  .left,
+  .right {
+    display: none; /* hide side overlays on small screens */
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    bottom: 10px;
+    height: 35px;
+    width: 35px;
+    font-size: 1.1rem;
+    left: auto;
+    right: 10px;
+    transform: none;
+    margin: 0 5px;
+  }
+
+  .arrowLeft {
+    left: 10px;
+    right: auto;
+  }
+}
+
+/* Ensure images and text scale well */
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
+.cardText h1 {
+  font-size: 2rem;
+}
+
+.cardText p {
+  font-size: 1rem;
+  max-width: 100%;
+}
+
