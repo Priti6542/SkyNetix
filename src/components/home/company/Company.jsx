@@ -20,12 +20,12 @@ const Company = () => (
       </div>
     </div>
     {/* Bottom Logos */}
-<div className="mt-10 flex justify-center gap-12  flex-wrap overflow-x-auto sm:flex-wrap sm:overflow-visible sm:whitespace-normal overflow-x-auto whitespace-nowrap">
-  
+    {/* <div className="mt-10 flex justify-center gap-12  flex-wrap overflow-x-auto sm:flex-wrap sm:overflow-visible sm:whitespace-normal overflow-x-auto whitespace-nowrap">
+
       {companyHighlights.logos.map((logo, idx) => (
         <img key={idx} src={logo.src} alt={logo.alt} className="h-12 opacity-80" />
       ))}
-    </div>
+    </div> */}
   </section>
 );
 

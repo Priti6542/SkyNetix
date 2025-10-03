@@ -16,6 +16,12 @@
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
+.Heading {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .PhotoCard {
   flex: 1 1 400px;
   max-width: 500px;
@@ -24,11 +30,12 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   position: relative;
   background: #fff;
+  width: 10%;
 }
 
 .PhotoCard img {
   width: 100%;
-  height: auto;
+  height: 500px;
   display: block;
   border-radius: 16px;
   transition: transform 0.4s ease;
@@ -94,7 +101,7 @@
   font-weight: 500;
   margin-bottom: 16px;
   color: #475569;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .Description {
