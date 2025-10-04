@@ -7,10 +7,10 @@ import heroimg4 from '../../../assets/heroimg4.jpg'
 export const HeroData = [
   {
     id: 1,
-    title: ["Your trusted partner from", "guranteed  software delivery"],
+    title: ["Innovation"],
     description: [
-      "Combining advanced technology and decades of industry insight, we design and",
-      "develop bespoke full-cycle solutions tailored to deliver your unique software vision."
+      "At Skynetix, innovation is at the heart of everything we do.We believe in turning ideas into impactful digital solutions.Our team blends creativity with the latest technologies to deliver unique experiences.",
+      "From concept to execution, we help businesses stay ahead in the digital era.Every project is an opportunity to innovate and create something extraordinary."
     ],
     // buttonText: "Learn More",
     text: "Awards",
@@ -23,10 +23,10 @@ export const HeroData = [
   },
   {
   id: 2,
-  title: ["Harness the full potential", "of your data"],
+  title: ["Web & App Development"],
   description: [
-    "Maximize your business potential by delving deeper into your data and",
-    "gaining invaluable insights into your customers' needs"
+    "Your business deserves a strong digital presence.We specialize in building responsive websites and intuitive mobile apps.",
+    "Our development process ensures speed, scalability, and reliability.Whether it’s an e-commerce store or a business app, we bring your vision to life.With a focus on user experience, we create platforms that truly engage."
   ],
   buttonText: "View Services",
   // services: [
@@ -42,16 +42,18 @@ export const HeroData = [
 
   {
     id: 3,
-    title: ["Deliver industry-leading","financial services"],
-    description: ["Strategically address risks while unlocking the full potential of", "Big Data for the financial services sector with our custom fintech solutions."],
+    title: ["Cloud & Security"],
+    description: ["The future of business lies in the cloud, and we make that transition seamless.At Skynetix, we provide secure, scalable, and cost-effective cloud solutions.Our experts ensure your data is protected with enterprise-grade security.", 
+      "We help organizations optimize infrastructure and enhance efficiency.With us, you’re always ready for tomorrow’s challenges."],
     buttonText: "Explore industry solution",
     // text: "client",
     image: heroimg3,
   },
   {
     id: 4,
-    title: ["Enable streamlined energy", "management"],
-    description: ["Maximize productivity, increase accessibility, ensure safety, and promote sustainability" ,"throughout your energy ecosystem."],
+    title: ["Business Growth"],
+    description: ["Technology is more than just code – it’s a catalyst for growth.We empower businesses to scale faster and smarter with digital tools.Our tailored strategies focus on results that drive success." ,
+      "From startups to enterprises, we support every stage of growth.Together, we build solutions that shape the future of your business."],
     // buttonText: "Explore industry solution",
     // text: "client",
     // logos: "asdfgh",

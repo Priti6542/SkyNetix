@@ -1,14 +1,17 @@
-import React from 'react';
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
-import styles from './Contact.module.css'; // Import CSS module
+import React from "react";
+import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import styles from "./Contact.module.css";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 px-4 py-10">
-      <div className={`w-full max-w-3xl bg-white rounded-xl shadow-2xl flex flex-col md:flex-row overflow-hidden ${styles.animateFadeIn}`}>
-        {/* Info Section with bubbling background */}
-        <div className={`md:w-1/2 p-8 flex flex-col justify-center bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 relative overflow-hidden group ${styles.groupHover}`}>
-          {/* Bubble animation container */}
+    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 px-4 py-10 flex flex-col items-center">
+      <div
+        className={`w-full max-w-5xl bg-white rounded-xl shadow-2xl flex flex-col md:flex-row overflow-hidden ${styles.animateFadeIn}`}
+      >
+        {/* Info Section */}
+        <div
+          className={`md:w-1/2 p-8 flex flex-col justify-center bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 relative overflow-hidden group ${styles.groupHover}`}
+        >
           <div className="absolute inset-0 pointer-events-none">
             <span className={`${styles.bubble} ${styles.bubble1}`} />
             <span className={`${styles.bubble} ${styles.bubble2}`} />
@@ -17,9 +20,12 @@ const Contact = () => {
             <span className={`${styles.bubble} ${styles.bubble5}`} />
           </div>
 
-          {/* Content above bubbles */}
-          <h2 className="text-3xl font-bold mb-4 text-indigo-700 relative z-10">Let's Get In Touch!</h2>
-          <p className="text-gray-700 mb-8 relative z-10">We’re here to help! Fill out the form and we’ll get back to you soon.</p>
+          <h2 className="text-3xl font-bold mb-4 text-indigo-700 relative z-10">
+            Let's Get In Touch!
+          </h2>
+          <p className="text-gray-700 mb-8 relative z-10">
+            We’re here to help! Fill out the form and we’ll get back to you soon.
+          </p>
           <ul className="space-y-4 relative z-10">
             <li className="flex items-center">
               <span className="material-icons text-indigo-600 mr-3">email</span>
@@ -95,6 +101,20 @@ const Contact = () => {
             </button>
           </form>
         </div>
+      </div>
+
+      {/* Map iframe */}
+      <div className="w-full max-w-5xl mt-10 rounded-lg overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.4420607984666!2d73.78349947496491!3d18.599176282509717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9f4ba19f5bb%3A0x631e505d3295e0bd!2sSMARTMATRIX%20Digital%20Services%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1740552081292!5m2!1sen!2sin"
+          width="100%"
+          height="300"
+          style={{ border: "none" }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Location map"
+        ></iframe>
       </div>
     </div>
   );

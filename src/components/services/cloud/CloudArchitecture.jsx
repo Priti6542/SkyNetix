@@ -1,10 +1,10 @@
 import React from 'react';
+import { CloudArchitectureData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
 import ServiceSection from '../servicesection/serviceSection';
-import { CloudConsultingData } from '../servicedata/ServiceData';
 
-const CloudConsulting = () => {
-  const { hero, services, benefits } = CloudConsultingData;
+const CloudArchitecture = () => {
+  const { hero, services, benefits } = CloudArchitectureData;
 
   // Defined heading for services section
   const ServiceSectionHeading = "Our Services";
@@ -32,4 +32,4 @@ const CloudConsulting = () => {
   );
 };
 
-export default CloudConsulting;
+export default CloudArchitecture;

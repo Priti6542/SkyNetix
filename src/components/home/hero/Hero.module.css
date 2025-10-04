@@ -1,5 +1,4 @@
 .heroWrapper {
-  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +7,7 @@
   padding: 0 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  
+  position: relative; /* important for absolute children */
 }
 
 .card {
@@ -20,7 +19,6 @@
   flex-direction: column;
   transition: all 0.4s ease;
   flex-shrink: 0;
-  /* margin-top: 60px; */
 }
 
 .left,
@@ -32,23 +30,51 @@
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 20px;
-  pointer-events: auto;
-  /* position: relative; */
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+}
+
+.cardImage {
+  height: 100%;            /* Added to fill card height */
+  width: 100%;             /* Fill container width */
+  overflow: hidden;        /* Hide overflow */
+  border-radius: inherit;  /* Inherit border radius */
 }
 
 .verticalLabel {
-  color: white;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 1.5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(12, 9, 9);
+  font-weight: 600;
+  font-size: 1rem;
   user-select: none;
+  pointer-events: none;
+  width: max-content;
+  padding: 6px 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  letter-spacing: 1.5px;
   text-align: center;
 }
+
+/* Position and rotate vertical label on the left card */
+.left .verticalLabel {
+  left: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+/* Position and rotate vertical label on the right card */
+.right .verticalLabel {
+  right: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: translateY(-50%) rotate(0deg);
+}
+
 
 .active {
   width: 70%;
@@ -71,50 +97,51 @@
   display: block;
 }
 
+/* ✅ Center text nicely */
 .cardText {
   position: absolute;
-  align-items: center;
-  justify-content: center;
-  top: 10%;
-  left: 20%;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* text-align: center; */
   color: white;
   z-index: 10;
-  max-width: 500px;
+  max-width: 80%;
   pointer-events: none;
 }
 
 .cardText h1 {
   margin: 0 0 15px;
-  font-weight: 500;
-  font-size: 3.2rem;
+  /* font-weight: 600; */
+  font-size: 3rem;
   line-height: 1.2;
-  white-space: pre-line;
 }
 
 .cardText p {
-  font-size: 1.1rem;
-  line-height: 1.4;
-  max-width: 80%;
-  margin: 0;
-  pointer-events: none;
+  margin: 0 0 15px;
+  /* font-weight: 600; */
+  font-size: 1.6rem;
+  line-height: 1.2;
 }
 
 .logos {
-  margin-top: 32px;
+  margin-top: 30px;
   display: flex;
-  gap: 40px;
-  pointer-events: none;
+  justify-content: center;
+  gap: 20px;
 }
 
 .logos img {
-  height: 36px;
+  height: 50px;
   user-select: none;
 }
 
+/* ✅ Floating card aligned right */
 .floatingCard {
   position: absolute;
-  right: 50px;
-  top: 25%;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   background: white;
   border-radius: 16px;
   display: flex;
@@ -133,9 +160,6 @@
   height: 60px;
   object-fit: cover;
   border-radius: 12px;
-  user-select: none;
-    z-index: 200;
-
 }
 
 .floatingCard p {
@@ -143,7 +167,6 @@
   font-size: 1rem;
   color: #000;
   margin: 0;
-  user-select: none;
 }
 
 .bookNow {
@@ -154,9 +177,9 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  user-select: none;
 }
 
+/* ✅ Arrows aligned bottom center */
 .arrowLeft,
 .arrowRight {
   position: absolute;
@@ -181,33 +204,16 @@
   background-color: white;
 }
 
-
-/* Position left arrow slightly left of center */
 .arrowLeft {
-  left: 45%;
+  left: 42%;
   transform: translateX(-100%);
 }
 
-/* Position right arrow slightly right of center */
 .arrowRight {
-  left: 55%;
-  transform: translateX(0%);
+  left: 58%;
 }
 
-
-.left .cardText,
-.right .cardText,
-.left .floatingCard,
-.right .floatingCard,
-.left .logos,
-.right .logos,
-.right .floatingCard img,
-.left .floatingCard img {
-  display: none;
-}
-
-
-/* Responsive adjustments */
+/* ✅ Responsive */
 @media (max-width: 1024px) {
   .heroWrapper {
     height: 500px;
@@ -215,19 +221,13 @@
   }
 
   .card {
-    width: 80vw; /* make cards adapt to viewport width */
+    width: 80vw;
   }
 
   .active {
-    width: 85%;
-    height: 480px;
+    width: 90%;
+    height: 460px;
     transform: scale(1);
-  }
-
-  .left,
-  .right {
-    width: 40px;
-    height: 480px;
   }
 
   .arrowLeft,
@@ -240,7 +240,6 @@
 }
 
 @media (max-width: 640px) {
-  /* Smaller devices */
   .heroWrapper {
     margin-top: 20px;
     flex-direction: column;
@@ -251,19 +250,31 @@
 
   .card,
   .active {
-    width: 90vw;
-    height: 350px;
+    width: 95vw;
+    height: 320px;
     transform: scale(1);
   }
 
   .left,
   .right {
-    display: none; /* hide side overlays on small screens */
+    display: none;
+  }
+
+  .cardText h1 {
+    font-size: 1.6rem;
+  }
+
+  .floatingCard {
+    width: 90%;
+    right: 5%;
+    top: auto;
+    bottom: 15px;
+    transform: none;
   }
 
   .arrowLeft,
   .arrowRight {
-    bottom: 10px;
+    bottom: -40px;
     height: 35px;
     width: 35px;
     font-size: 1.1rem;
@@ -278,22 +289,3 @@
     right: auto;
   }
 }
-
-/* Ensure images and text scale well */
-.cardImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  display: block;
-}
-
-.cardText h1 {
-  font-size: 2rem;
-}
-
-.cardText p {
-  font-size: 1rem;
-  max-width: 100%;
-}
-

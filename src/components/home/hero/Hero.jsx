@@ -16,53 +16,44 @@ const Hero = () => {
   return (
     <div className={styles.heroWrapper}>
       {HeroData.map((item, index) => {
-        let position = '';
-        if (index < currentIndex) position = 'left';
-        else if (index === currentIndex) position = 'active';
-        else position = 'right';
+  let position = "";
+  if (index < currentIndex) position = "left";
+  else if (index === currentIndex) position = "active";
+  else position = "right";
 
-        return (
-          <div
-            key={index}
-            className={`${styles.card} ${styles[position]}`}
-            onClick={() => handleCardClick(index)}
-          >
-            {(position === 'left' || position === 'right') && (
-              <div className={styles.verticalLabel}>{item.label}</div>
-            )}
+  return (
+    <div
+      key={index}
+      className={`${styles.card} ${styles[position]}`}
+      onClick={() => handleCardClick(index)}
+    >
+      {(position === "left" || position === "right") && (
+        <div className={styles.verticalLabel}>{item.label}</div>
+      )}
 
-            {position === 'active' && (
-              <>
-                <div className={styles.cardText}>
-                  <h1>
-                    {item.title[0]} <br /> {item.title[1]}
-                  </h1>
-                  <p>{item.description[0]}</p>
-                  <div className={styles.logos}>
-                    {item.logos?.map((logo, i) => (
-                      <img key={i} src={logo} alt={`Logo ${i + 1}`} />
-                    ))}
-                  </div>
-                </div>
-
-                {/* <div className={styles.floatingCard}>
-                  <img src={item.floatingCard?.img} alt="Consultation" />
-                  <div>
-                    <p>{item.floatingCard?.text}</p>
-                    <a href={item.floatingCard?.buttonLink} className={styles.bookNow}>
-                      {item.floatingCard?.buttonText} &#8594;
-                    </a>
-                  </div>
-                </div> */}
-              </>
-            )}
-
-            <div className={styles.cardImage}>
-              <img src={item.image} alt={item.label || 'Hero Image'} />
+      {position === "active" && (
+        <>
+          <div className={styles.cardText}>
+            <h1>
+              {item.title[0]} <br /> {item.title[1]}
+            </h1>
+            <p>{item.description[0]}</p>
+            <div className={styles.logos}>
+              {item.logos?.map((logo, i) => (
+                <img key={i} src={logo} alt={`Logo ${i + 1}`} />
+              ))}
             </div>
           </div>
-        );
-      })}
+        </>
+      )}
+
+      <div className={styles.cardImage}>
+        <img src={item.image} alt={item.label || "Hero Image"} />
+      </div>
+    </div>
+  );
+})}
+
       <button className={styles.arrowLeft} onClick={goPrev} aria-label="Previous Slide">
         &#10094;
       </button>

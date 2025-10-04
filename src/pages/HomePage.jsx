@@ -1,39 +1,37 @@
-import React from 'react'
-import Hero from '../components/home/hero/Hero'
-import Card from '../components/home/card/Card'
-import HomeFeature from '../components/home/features/HomeFeature'
-import VideoSection from '../components/home/videosection/VideoSection'
-import Company from '../components/home/company/Company'
-// import IndustriesSection from '../components/home/industries/IndustriesSection'
+import React from "react";
+import Hero from "../components/home/hero/Hero";
+import Card from "../components/home/card/Card";
+import HomeFeature from "../components/home/features/HomeFeature";
+import VideoSection from "../components/home/videosection/VideoSection";
+import Company from "../components/home/company/Company";
 
-const HomePage = () => {
+const HomePage = ({ setShowServicesPopup }) => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <section data-speed="1.2">
         <Hero />
       </section>
 
-      <section data-speed="0.9">
-        <Card />
+      <section data-speed="0.9" className="mt-12">
+        {/* Passing setShowServicesPopup to Card for popup control */}
+        <Card setShowServicesPopup={setShowServicesPopup} />
       </section>
 
-      <section data-speed="1.1">
+      <section data-speed="1.1" className="mt-12">
         <HomeFeature />
       </section>
 
-      <section data-lag="0.3">
+      <section data-lag="0.3" className="mt-12">
         <VideoSection />
       </section>
 
-      <section data-speed="0.8">
+      <section data-speed="0.8" className="mt-12 mb-20">
         <Company />
       </section>
 
-      <section data-speed="1.3">
-        {/* <IndustriesSection /> */}
-      </section>
+      <section data-speed="1.3">{/* Future IndustriesSection */}</section>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

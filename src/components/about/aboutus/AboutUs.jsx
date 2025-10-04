@@ -22,7 +22,7 @@ const AboutUs = () => {
           <h4>{aboutContent.subHeading}</h4>
           <h2>{aboutContent.heading}</h2>
           <p>{aboutContent.paragraph}</p>
-          <Link to={aboutContent.link}>{aboutContent.buttonText}</Link>
+          {/* <Link to={aboutContent.link}>{aboutContent.buttonText}</Link> */}
         </div>
       </div>
     </div>

@@ -1,15 +1,15 @@
 import React from 'react';
+import { CloudDevopsData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
 import ServiceSection from '../servicesection/serviceSection';
-import { CloudConsultingData } from '../servicedata/ServiceData';
 
-const CloudConsulting = () => {
-  const { hero, services, benefits } = CloudConsultingData;
+const CloudDevopsEngineering = () => {
+  const { hero, services, benefits } = CloudDevopsData;
 
   // Defined heading for services section
   const ServiceSectionHeading = "Our Services";
 
-  const benefitsHeading = "Why Choose Our Web Development?";
+  const benefitsHeading = "Why Choose Our Software Engineering?";
   const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
 
   return (
@@ -32,4 +32,4 @@ const CloudConsulting = () => {
   );
 };
 
-export default CloudConsulting;
+export default CloudDevopsEngineering;

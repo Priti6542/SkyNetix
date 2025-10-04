@@ -1,49 +1,100 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiCode, FiDatabase, FiCloud } from 'react-icons/fi';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiCode, FiDatabase, FiCloud } from "react-icons/fi";
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   const categories = [
     {
-      title: 'Engineering',
-      desc: 'End-to-end software development services.',
+      title: "Engineering",
+      desc: "End-to-end software development services.",
       services: [
-        { icon: <FiCode />, title: 'App Development', desc: 'Modern web/mobile applications.' },
-        { icon: <FiCode />, title: 'Legacy Modernization', desc: 'Revamp outdated systems.' },
-        { icon: <FiCloud />, title: 'Cloud Migration', desc: 'Scale infrastructure effortlessly.' },
-        { icon: <FiCode />, title: 'Code Optimization', desc: 'Improve code efficiency.' },
-        { icon: <FiCode />, title: 'Testing Services', desc: 'Automated QA solutions.' },
-        { icon: <FiCode />, title: 'API Development', desc: 'Build scalable APIs.' },
+        { icon: <FiCode />, title: "Software Engineering", desc: "Modern web/mobile applications." },
+        { icon: <FiCode />, title: "System Engineering", desc: "Revamp outdated systems." },
+        { icon: <FiCloud />, title: "Cloud DevOps Engineering", desc: "Scale infrastructure effortlessly." },
+        { icon: <FiCode />, title: "Code Optimization", desc: "Improve code efficiency." },
+        { icon: <FiCode />, title: "API Development", desc: "Build scalable APIs." },
       ],
     },
     {
-      title: 'AI & Data',
-      desc: 'Unlock value with AI-driven solutions.',
+      title: "AI & Data",
+      desc: "Unlock value with AI-driven solutions.",
       services: [
-        { icon: <FiDatabase />, title: 'Data Analytics', desc: 'Make data-driven decisions.' },
-        { icon: <FiDatabase />, title: 'Machine Learning', desc: 'Train predictive models.' },
-        { icon: <FiCode />, title: 'AI Integration', desc: 'Embed AI in products.' },
-        { icon: <FiDatabase />, title: 'Deep Learning', desc: 'Advanced neural networks.' },
-        { icon: <FiDatabase />, title: 'Big Data', desc: 'Handle massive datasets.' },
-        { icon: <FiDatabase />, title: 'NLP Services', desc: 'Language understanding.' },
+        { icon: <FiDatabase />, title: "AI & Data Science", desc: "Make data-driven decisions." },
+        { icon: <FiDatabase />, title: "Machine Learning", desc: "Train predictive models." },
+        { icon: <FiCode />, title: "AI Integration", desc: "Embed AI in products." },
+        { icon: <FiDatabase />, title: "NLP Services", desc: "Language understanding." },
+        { icon: <FiDatabase />, title: "Big Data", desc: "Handle massive datasets." },
       ],
     },
     {
-      title: 'Cloud',
-      desc: 'Cloud transformation and operations.',
+      title: "Cloud",
+      desc: "Cloud transformation and operations.",
       services: [
-        { icon: <FiCloud />, title: 'Cloud Consulting', desc: 'Migrate safely & securely.' },
-        { icon: <FiCloud />, title: 'DevOps Automation', desc: 'CI/CD pipelines setup.' },
-        { icon: <FiCloud />, title: 'Monitoring & Ops', desc: 'Cloud health monitoring.' },
-        { icon: <FiCloud />, title: 'Security Audit', desc: 'Harden cloud environments.' },
-        { icon: <FiCloud />, title: 'Multi-Cloud Support', desc: 'AWS, Azure, GCP' },
-        { icon: <FiCloud />, title: 'Infrastructure as Code', desc: 'Automated provisioning.' },
+        { icon: <FiCloud />, title: "Cloud Consulting", desc: "Migrate safely & securely." },
+        { icon: <FiCloud />, title: "Cloud Migration", desc: "CI/CD pipelines setup." },
+        { icon: <FiCloud />, title: "Cloud Architecture", desc: "Cloud health monitoring." },
+        { icon: <FiCloud />, title: "Security Compliance", desc: "Harden cloud environments." },
+        { icon: <FiCloud />, title: "Monitoring & Ops", desc: "Monitor and operate cloud." },
       ],
     },
   ];
+
+  const handleServiceClick = (title) => {
+    switch (title) {
+      case "Software Engineering":
+        navigate("/services/software-engineering");
+        break;
+      case "System Engineering":
+        navigate("/services/system-engineering");
+        break;
+      case "Code Optimization":
+        navigate("/services/code-optimization");
+        break;
+      case "Testing Services":
+        navigate("/services/testing-services");
+        break;
+      case "API Development":
+        navigate("/services/api-development");
+        break;
+      case "AI & Data Science":
+        navigate("/services/ai-and-data-science");
+        break;
+      case "Machine Learning":
+        navigate("/services/machine-learning");
+        break;
+      case "AI Integration":
+        navigate("/services/ai-integration");
+        break;
+      case "NLP Services":
+        navigate("/services/nlp-services");
+        break;
+      case "Big Data":
+        navigate("/services/big-data");
+        break;
+      case "Cloud Consulting":
+        navigate("/services/cloud-consulting");
+        break;
+      case "Cloud Migration":
+        navigate("/services/cloud-migration");
+        break;
+      case "Cloud Architecture":
+        navigate("/services/cloud-architecture");
+        break;
+      case "Security Compliance":
+        navigate("/services/security-compliance");
+        break;
+      case "Monitoring & Ops":
+        navigate("/services/monitoring-ops");
+        break;
+      default:
+        console.warn("Service not mapped:", title);
+        break;
+    }
+  };
 
   return (
     <div
@@ -90,6 +141,7 @@ const Services = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: -20 }}
               transition={{ duration: 0.3, delay: i * 0.01, ease: [0.25, 0.46, 0.45, 0.94] }}
+              onClick={() => handleServiceClick(s.title)}
             >
               <ServiceCard icon={s.icon} title={s.title} desc={s.desc} />
             </motion.div>
@@ -104,95 +156,22 @@ const Category = ({ title, desc, active, onHover }) => (
   <div
     onMouseEnter={onHover}
     className={`p-3 rounded-lg cursor-pointer transition-all duration-300 
-      ${active ? 'bg-blue-50 border-l-4 border-blue-500 shadow-sm' : 'hover:bg-blue-50 hover:border-l-4 hover:border-blue-400'}
+      ${active ? "bg-blue-50 border-l-4 border-blue-500 shadow-sm" : "hover:bg-blue-50 hover:border-l-4 hover:border-blue-400"}
       focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-1`}
     tabIndex={0}
     role="button"
     aria-pressed={active}
   >
-    <h3 className={`text-md font-semibold ${active ? 'text-blue-700' : 'text-gray-800'}`}>
-      {title}
-    </h3>
+    <h3 className={`text-md font-semibold ${active ? "text-blue-700" : "text-gray-800"}`}>{title}</h3>
     <p className="text-sm text-gray-500 mt-1">{desc}</p>
   </div>
 );
 
 const ServiceCard = ({ icon, title, desc }) => {
-  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
-
-  const handleClick = () => {
-  switch (title) {
-    // Engineering
-    case 'App Development':
-      navigate('/services/app-development');
-      break;
-    case 'Legacy Modernization':
-      navigate('/services/legacy-modernization');
-      break;
-    case 'Cloud Migration':
-      navigate('/services/cloud-migration');
-      break;
-    case 'Code Optimization':
-      navigate('/services/code-optimization');
-      break;
-    case 'Testing Services':
-      navigate('/services/testing-services');
-      break;
-    case 'API Development':
-      navigate('/services/api-development');
-      break;
-
-    // AI & Data
-    case 'Data Analytics':
-      navigate('/services/data-analytics');
-      break;
-    case 'Machine Learning':
-      navigate('/services/machine-learning');
-      break;
-    case 'AI Integration':
-      navigate('/services/ai-integration');
-      break;
-    case 'Deep Learning':
-      navigate('/services/deep-learning');
-      break;
-    case 'Big Data':
-      navigate('/services/big-data');
-      break;
-    case 'NLP Services':
-      navigate('/services/nlp-services');
-      break;
-
-    // Cloud
-    case 'Cloud Consulting':
-      navigate('/services/cloud-consulting');
-      break;
-    case 'DevOps Automation':
-      navigate('/services/devops-automation');
-      break;
-    case 'Monitoring & Ops':
-      navigate('/services/monitoring-ops');
-      break;
-    case 'Security Audit':
-      navigate('/services/security-audit');
-      break;
-    case 'Multi-Cloud Support':
-      navigate('/services/multicloud-support');
-      break;
-    case 'Infrastructure as Code':
-      navigate('/services/infrastructure-as-code');
-      break;
-
-    default:
-      console.warn('Service not mapped:', title);
-      break;
-  }
-};
-
 
   return (
     <motion.div
-      onClick={handleClick}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
@@ -200,7 +179,6 @@ const ServiceCard = ({ icon, title, desc }) => {
         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
       tabIndex={0}
       role="button"
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleClick()}
       aria-label={`Service: ${title}`}
     >
       <div className="flex flex-col">
@@ -208,19 +186,16 @@ const ServiceCard = ({ icon, title, desc }) => {
           animate={{
             rotate: isHovered ? 10 : 0,
             scale: isHovered ? 1.3 : 1,
-            color: isHovered ? '#2563eb' : '#3b82f6',
+            color: isHovered ? "#2563eb" : "#3b82f6",
           }}
-          transition={{ type: 'spring', stiffness: 300 }}
+          transition={{ type: "spring", stiffness: 300 }}
           className="text-blue-600 text-3xl mb-3"
         >
           {icon}
         </motion.div>
 
         <motion.h4
-          animate={{
-            color: isHovered ? '#2563eb' : '#1f2937',
-            scale: isHovered ? 1.1 : 1,
-          }}
+          animate={{ color: isHovered ? "#2563eb" : "#1f2937", scale: isHovered ? 1.1 : 1 }}
           transition={{ duration: 0.3 }}
           className="font-semibold text-gray-800"
         >

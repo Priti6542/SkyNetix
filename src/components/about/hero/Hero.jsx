@@ -14,13 +14,13 @@ const sections = [
   {
     title: "सोयरीक",
     subtitle: "Embrace the significance of shared joy.",
-    description: "In every celebration, find the heartwarming stories.",
+    description: "Developed a responsive Matrimony Website that connects individuals seeking life partners. The platform includes profile creation, partner search, and detailed profile views with options to download biodata in PDF. It ensures a user-friendly interface, secure data handling, and smooth navigation for an enhanced matchmaking experience.",
     img: aboutcard1,
   },
   {
     title: "Devcon Software Solutions Pvt Ltd",
     subtitle: "Explore the stories within each present.",
-    description: "Every gift is a chapter in your family's narrative.",
+    description: "Devcons Software Solution is a technology-driven company specializing in innovative web, mobile, and enterprise solutions. We focus on delivering scalable, secure, and user-friendly software tailored to client needs. With expertise in the latest technologies, our mission is to empower businesses through digital transformation and reliable IT services.",
     img: aboutcard2,
   },
 ];

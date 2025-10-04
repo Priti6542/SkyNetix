@@ -1,15 +1,15 @@
 import React from 'react';
-import { webDevelopment } from '../servicedata/ServiceData';
+import { SystemEngineeringData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
 import ServiceSection from '../servicesection/serviceSection';
 
-const WebDevelopmentSection = () => {
-  const { hero, services, benefits } = webDevelopment;
+const SystemEngineering = () => {
+  const { hero, services, benefits } = SystemEngineeringData;
 
   // Defined heading for services section
   const ServiceSectionHeading = "Our Services";
 
-  const benefitsHeading = "Why Choose Our Web Development?";
+  const benefitsHeading = "Why Choose Our Software Engineering?";
   const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
 
   return (
@@ -32,4 +32,4 @@ const WebDevelopmentSection = () => {
   );
 };
 
-export default WebDevelopmentSection;
+export default SystemEngineering;
