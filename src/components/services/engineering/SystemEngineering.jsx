@@ -1,13 +1,13 @@
 import React from 'react';
 import { SystemEngineeringData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 
 const SystemEngineering = () => {
   const { hero, services, benefits } = SystemEngineeringData;
 
   // Defined heading for services section
-  const ServiceSectionHeading = "Our Services";
+  // const ServiceSectionHeading = "Our Services";
 
   const benefitsHeading = "Why Choose Our Software Engineering?";
   const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
@@ -24,7 +24,7 @@ const SystemEngineering = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />

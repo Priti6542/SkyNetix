@@ -17,7 +17,7 @@
     "@mui/material": "^7.2.0",
     "@tailwindcss/vite": "^4.1.11",
     "emailjs": "^4.0.3",
-    "framer-motion": "^12.23.6",
+    "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
     "react": "^19.1.0",
     "react-countup": "^6.5.3",

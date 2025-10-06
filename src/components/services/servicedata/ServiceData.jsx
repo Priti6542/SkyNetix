@@ -5,10 +5,10 @@
 export const SoftwareEngineeringData = {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -62,10 +62,10 @@ export const SoftwareEngineeringData = {
 export const SystemEngineeringData = {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -119,10 +119,10 @@ export const SystemEngineeringData = {
 export const CloudDevopsData = {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -176,10 +176,10 @@ export const CloudDevopsData = {
 export const DataEngineeringAnalyticsData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -234,10 +234,10 @@ export const DataEngineeringAnalyticsData =  {
 export const applicationDevelopment =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -293,10 +293,10 @@ export const applicationDevelopment =  {
 export const CloudMigration =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -351,10 +351,10 @@ export const CloudMigration =  {
 export const CodeOptimizationData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -409,10 +409,10 @@ export const CodeOptimizationData =  {
 export const TestingServicesData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -467,10 +467,10 @@ export const TestingServicesData =  {
 export const APIDevelopmentData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -527,10 +527,10 @@ export const APIDevelopmentData =  {
 export const AIAndDataScienceData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -585,10 +585,10 @@ export const AIAndDataScienceData =  {
 export const MachineLearningData=  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -643,10 +643,10 @@ export const MachineLearningData=  {
 export const AIintegrationData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -701,10 +701,10 @@ export const AIintegrationData =  {
 export const BigData_Data =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -759,10 +759,10 @@ export const BigData_Data =  {
 export const NLPServicesData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -818,11 +818,11 @@ export const NLPServicesData =  {
 
 export const CloudConsultingData =  {
   hero: {
-    imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -877,10 +877,10 @@ export const CloudConsultingData =  {
 export const CloudMigrationData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -935,10 +935,10 @@ export const CloudMigrationData =  {
 export const CloudArchitectureData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -994,10 +994,10 @@ export const CloudArchitectureData =  {
 export const SecurityAndComplianceData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -1052,10 +1052,10 @@ export const SecurityAndComplianceData =  {
 export const MonitoringOpsData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [
@@ -1110,10 +1110,10 @@ export const MonitoringOpsData =  {
 export const SecurityAuditData =  {
   hero: {
     imageUrl: 'https://eleks.com/wp-content/uploads/heade-application-development-min-2048x725.jpg',
-    subtitle: '○ Web Engineering',
-    title: 'Custom Web Application Development',
-    description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
-    buttonText: 'Get web advice',
+    // subtitle: '○ Web Engineering',
+    // title: 'Custom Web Application Development',
+    // description: 'We’ll help you bring your web software vision to life with our full-cycle development service.',
+    // buttonText: 'Get web advice',
   },
   // Store icon type as a string or reference, not a JSX element
   services: [

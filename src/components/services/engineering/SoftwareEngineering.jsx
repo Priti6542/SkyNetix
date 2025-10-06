@@ -1,7 +1,7 @@
 import React from 'react';
 import { SoftwareEngineeringData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 
 const SoftwareEngineering = () => {
   const { hero, services, benefits } = SoftwareEngineeringData;
@@ -24,7 +24,7 @@ const SoftwareEngineering = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />

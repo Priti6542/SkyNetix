@@ -64,9 +64,9 @@ const Routing = () => {
           <Route path="system-engineering" element={<SystemEngineering />} />
           <Route path="cloud-devops-engineering" element={<CloudDevopsEngineering />} />
           {/* <Route path="cloud-migration" element={<CloudMigrationSection />} /> */}
-          <Route path="code-optimization" element={<CodeOptimization />} />
+          {/* <Route path="code-optimization" element={<CodeOptimization />} />
           <Route path="testing-services" element={<TestingServices />} />
-          <Route path="api-development" element={<ApiDevlopment />} />
+          <Route path="api-development" element={<ApiDevlopment />} /> */}
 
           <Route path="ai-and-data-science" element={<AIDataScience />} />
           <Route path="machine-learning" element={<MachineLearning />} />

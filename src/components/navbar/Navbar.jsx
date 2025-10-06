@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import skynetix from "../../assets/skynetix.png";
 import Services from "../services/Services";
 
 const Navbar = ({ showServicesPopup, setShowServicesPopup }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const popupRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
@@ -28,47 +29,54 @@ const Navbar = ({ showServicesPopup, setShowServicesPopup }) => {
           <img
             src={skynetix}
             alt="SkyNetix Logo"
-            className="h-10 w-auto select-none"
+            className="h-10 w-auto select-none hover:text-indigo-600 inline-block cursor-pointer"
             draggable={false}
           />
         </Link>
 
         <ul className="hidden md:flex flex-1 justify-center items-center space-x-6 font-medium text-medium">
           <li>
-            <Link to="/" className="hover:text-indigo-600 inline-block">
+            <Link
+              onMouseEnter={() => navigate("/")}
+              className="hover:text-indigo-600 inline-block cursor-pointer"
+            >
               Home
             </Link>
           </li>
-          <li>
-            <Link to="/about" className="hover:text-indigo-600 inline-block">
-              About
-            </Link>
+          <li
+            onMouseEnter={() => navigate("/about")}
+            className="hover:text-indigo-600 inline-block cursor-pointer"
+          >
+            About
           </li>
-          <li>
-            <Link to="/clients" className="hover:text-indigo-600 inline-block">
-              Clients
-            </Link>
+          <li
+            onMouseEnter={() => navigate("/clients")}
+            className="hover:text-indigo-600 inline-block cursor-pointer"
+          >
+            Clients
           </li>
-          <li>
-            <Link to="/healthcare" className="hover:text-indigo-600 inline-block">
-              Healthcare
-            </Link>
+          <li
+            onMouseEnter={() => navigate("/healthcare")}
+            className="hover:text-indigo-600 inline-block cursor-pointer"
+          >
+            Healthcare
           </li>
-          <li>
-            <button
-              onClick={() => setShowServicesPopup(true)}
-              className="hover:text-indigo-600 transition font-medium"
-            >
+          <li
+            onMouseEnter={() => setShowServicesPopup(true)}
+            // onMouseLeave={() => setShowServicesPopup(false)}
+            className="cursor-pointer"
+          >
+            <div className="hover:text-indigo-600 transition font-medium">
               Services
-            </button>
+            </div>
           </li>
-          <li>
-            <Link
-              to="/contact"
-              className="inline-block px-6 py-2 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-500 hover:shadow-xl transition-all duration-300"
-            >
-              Contact Us
-            </Link>
+
+
+          <li
+            onMouseEnter={() => navigate("/contact")}
+            className="inline-block px-6 py-2 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-500 hover:shadow-xl transition-all duration-300 cursor-pointer"
+          >
+            Contact Us
           </li>
         </ul>
 
@@ -115,32 +123,32 @@ const Navbar = ({ showServicesPopup, setShowServicesPopup }) => {
               Home
             </Link>
           </li>
-          <li>
-            <Link
-              to="/about"
-              className="block hover:text-indigo-600"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
+          <li
+            onClick={() => {
+              navigate("/about");
+              setMobileMenuOpen(false);
+            }}
+            className="block hover:text-indigo-600 cursor-pointer"
+          >
+            About
           </li>
-          <li>
-            <Link
-              to="/clients"
-              className="block hover:text-indigo-600"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Clients
-            </Link>
+          <li
+            onClick={() => {
+              navigate("/clients");
+              setMobileMenuOpen(false);
+            }}
+            className="block hover:text-indigo-600 cursor-pointer"
+          >
+            Clients
           </li>
-          <li>
-            <Link
-              to="/healthcare"
-              className="block hover:text-indigo-600"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Healthcare
-            </Link>
+          <li
+            onClick={() => {
+              navigate("/healthcare");
+              setMobileMenuOpen(false);
+            }}
+            className="block hover:text-indigo-600 cursor-pointer"
+          >
+            Healthcare
           </li>
           <li>
             <button
@@ -153,14 +161,14 @@ const Navbar = ({ showServicesPopup, setShowServicesPopup }) => {
               Services
             </button>
           </li>
-          <li>
-            <Link
-              to="/contact"
-              className="block hover:text-indigo-600"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact Us
-            </Link>
+          <li
+            onClick={() => {
+              navigate("/contact");
+              setMobileMenuOpen(false);
+            }}
+            className="block hover:text-indigo-600 cursor-pointer"
+          >
+            Contact Us
           </li>
         </ul>
       )}
