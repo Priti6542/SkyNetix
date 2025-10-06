@@ -100,7 +100,7 @@
 /* ✅ Center text nicely */
 .cardText {
   position: absolute;
-  top: 38%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   /* text-align: center; */
@@ -213,57 +213,98 @@
   left: 58%;
 }
 
-/* ✅ Responsive */
-@media (max-width: 1024px) {
+/* =========================================================
+   ✅ RESPONSIVE BREAKPOINTS
+========================================================= */
+
+/* ----------- Large Tablets / Laptops ----------- */
+@media (max-width: 1200px) {
   .heroWrapper {
-    height: 500px;
-    gap: 15px;
+    height: 520px;
   }
-
-  .card {
-    width: 80vw;
-  }
-
   .active {
-    width: 90%;
-    height: 460px;
-    transform: scale(1);
+    width: 80%;
+    height: 480px;
   }
-
-  .arrowLeft,
-  .arrowRight {
-    bottom: 15px;
-    height: 40px;
-    width: 40px;
-    font-size: 1.3rem;
+  .cardText h1 {
+    font-size: 2.4rem;
+  }
+  .cardText p {
+    font-size: 1.2rem;
   }
 }
 
-@media (max-width: 640px) {
+/* ----------- Tablets ----------- */
+@media (max-width: 992px) {
   .heroWrapper {
-    margin-top: 20px;
-    flex-direction: column;
+    flex-wrap: wrap;
     height: auto;
-    padding: 0 0.5rem;
-    gap: 10px;
+    gap: 15px;
   }
+  .card {
+    width: 85vw;
+  }
+  .active {
+    width: 90%;
+    height: 420px;
+  }
+  .arrowsContainer {
+    bottom: 10px;
+  }
+  .arrowLeft,
+  .arrowRight {
+    height: 45px;
+    width: 45px;
+    font-size: 1.4rem;
+  }
+}
 
+/* ----------- Phones ----------- */
+@media (max-width: 768px) {
+  .heroWrapper {
+    flex-direction: column;
+    height: 380px;
+    gap: 20px;
+    /* padding: 0 0.5rem; */
+    margin-top: q10px;
+  }
   .card,
   .active {
     width: 95vw;
-    height: 320px;
-    transform: scale(1);
+    height:400px;
   }
-
-  .left,
-  .right {
-    display: none;
+  /* .cardText h1 {
+    font-size: 1.8rem;
   }
+  .cardText p {
+    font-size: 1.1rem;
+  } */
+.cardText {
+  position: absolute;
+  top: 38%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  /* text-align: center; */
+  color: white;
+  z-index: 10;
+  max-width: 160%;
+  pointer-events: none;
+}
 
-  .cardText h1 {
-    font-size: 1.6rem;
-  }
+.cardText h1 {
+  margin: 0 0 15px;
+  /* font-weight: 600; */
+  font-size: 3rem;
+  line-height: 1.2;
+}
 
+.cardText p {
+  margin: 0 0 15px;
+  /* font-weight: 600; */
+  font-size: 1.6rem;
+  
+  /* line-height: 1.2; */
+}
   .floatingCard {
     width: 90%;
     right: 5%;
@@ -271,21 +312,47 @@
     bottom: 15px;
     transform: none;
   }
+  .left,
+  .right {
+    display: none;
+  }
+  .arrowsContainer {
+    position: relative;
+    bottom: auto;
+    margin-top: 15px; /* arrows come below image */
+  }
+}
 
+/* ----------- Small Phones ----------- */
+@media (max-width: 480px) {
+  .card,
+  .active {
+    height: 300px;
+  }
+  .cardText h1 {
+    font-size: 1.4rem;
+  }
+  .cardText p {
+    font-size: 0.9rem;
+  }
+  .floatingCard {
+    height: 70px;
+    width: 92%;
+    gap: 10px;
+    padding: 10px;
+  }
+  .floatingCard img {
+    width: 80px;
+    height: 50px;
+  }
+  .arrowsContainer {
+    margin-top: 10px;
+    gap: 15px;
+  }
   .arrowLeft,
   .arrowRight {
-    bottom: -40px;
-    height: 35px;
-    width: 35px;
+    height: 38px;
+    width: 38px;
     font-size: 1.1rem;
-    left: auto;
-    right: 10px;
-    transform: none;
-    margin: 0 5px;
-  }
-
-  .arrowLeft {
-    left: 10px;
-    right: auto;
   }
 }
