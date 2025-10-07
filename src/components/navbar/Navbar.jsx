@@ -22,6 +22,11 @@ const Navbar = ({ showServicesPopup, setShowServicesPopup }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showServicesPopup, setShowServicesPopup]);
 
+  // 👇 NEW: Automatically close popup when route changes
+  useEffect(() => {
+    if (showServicesPopup) setShowServicesPopup(false);
+  }, [location.pathname]);
+
   return (
     <nav className="top-0 left-0 right-0 z-50 text-black px-6 py-4 border-b border-gray-300 bg-white overflow-hidden align-center">
       <div className="max-w-7xl mx-auto flex items-center justify-between">

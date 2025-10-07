@@ -1,7 +1,7 @@
 import React from 'react';
 import { AIintegrationData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 
 const AiIntegration = () => {
   const { hero, services, benefits } = AIintegrationData;
@@ -24,7 +24,7 @@ const AiIntegration = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />

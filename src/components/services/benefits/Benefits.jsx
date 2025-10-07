@@ -18,7 +18,7 @@ const Benefits = ({ heading, subheading, benefits }) => {
 
       {/* Benefit Cards */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl mx-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl mx-auto border-tr-100 "
         initial="hidden"
         animate="visible"
         variants={{
@@ -29,7 +29,7 @@ const Benefits = ({ heading, subheading, benefits }) => {
         {benefits.map(({ title, description }, index) => (
           <motion.div
             key={index}
-            className="relative bg-white p-8 rounded-xl cursor-pointer shadow-md flex flex-col space-y-4 text-left overflow-hidden group"
+            className="relative bg-white p-8 rounded-tr-[60px] rounded-bl-[60px] cursor-pointer shadow-md flex flex-col space-y-4 text-left overflow-hidden group"
             variants={{
               hidden: { opacity: 0, y: 40, scale: 0.95 },
               visible: { opacity: 1, y: 0, scale: 1 },
@@ -44,13 +44,13 @@ const Benefits = ({ heading, subheading, benefits }) => {
               className="absolute top-0 right-0 z-0"
               variants={{
                 rest: {
-                  width: 140,
-                  height: 70,
+                  width: 500,
+                  height: 10,
                   backgroundColor: "#ff4500",
-                  borderBottomRightRadius: "150px",
-                  borderBottomRightRadius: "150px",
-                  borderBottomLeftRadius: "150px",
-                  borderTopLeftRadius: "150px",
+                  borderTopRightRadius: "40px",
+                  // borderBottomRightRadius: "200px",
+                  // borderBottomLeftRadius: "200px",
+                  // borderTopLeftRadius: "200px",
                   opacity: 0.7,
                   transition: { duration: 0.4, ease: "easeInOut" },
                 },
@@ -64,7 +64,7 @@ const Benefits = ({ heading, subheading, benefits }) => {
               }}
               style={{
                 pointerEvents: "none",
-                boxShadow: "4px 4px 4px 4px #72737bff", // subtle shadow like in the image
+                boxShadow: "4px 4px 4px 4px #d2d3d7ff", // subtle shadow like in the image
               }}
             />
 

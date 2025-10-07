@@ -1,6 +1,6 @@
 import React from 'react';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 import { CloudConsultingData } from '../servicedata/ServiceData';
 
 const CloudConsulting = () => {
@@ -9,7 +9,7 @@ const CloudConsulting = () => {
   // Defined heading for services section
   const ServiceSectionHeading = "Our Services";
 
-  const benefitsHeading = "Why Choose Our Web Development?";
+  const benefitsHeading = "Why Choose Our Cloud Consulting?";
   const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
 
   return (
@@ -24,7 +24,7 @@ const CloudConsulting = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />

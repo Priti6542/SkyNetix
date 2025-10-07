@@ -1,8 +1,7 @@
 import React from "react";
-import mc22 from "../../../assets/mc22.jpg";
-import mc23 from "../../../assets/mc23.jpg";
+import medicalcoding from "../../../assets/medicalcoding.jpg";
+import medicalbilling from "../../../assets/medicalbilling.jpg";
 import arcaller from "../../../assets/arcaller.jpg";
-import mb from "../../../assets/mb.jpg";
 // import mb from "../assets/mb.jpg";
 import { motion } from "framer-motion";
 import {
@@ -76,13 +75,13 @@ const App = () => {
   const cardsData = [
     {
       id: "medical-coding",
-      image: mc22,
+      image: medicalcoding,
       title: "Medical Coding",
       description: "Medical Coding Services is a specialized function in the Revenue.",
     },
     {
       id: "medical-billing",
-      image: mb,
+      image: medicalbilling,
       title: "Medical Billing",
       description: "Medical billing services have become indispensable for practitioners.",
     },

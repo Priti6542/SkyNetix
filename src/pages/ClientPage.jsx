@@ -35,23 +35,23 @@ const ClientPage = () => {
       </section>
 
       {/* Client Cards / Testimonials */}
-      <section data-lag="0.4" className="py-20 bg-gray-100">
+      {/* <section data-lag="0.4" className="py-20 bg-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
             What Our Clients Say
           </h2>
           <ClientCard />
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Form */}
       <section data-speed="0.9" className="py-20 bg-gradient-to-r from-indigo-50 to-white">
-        <div className="max-w-5xl mx-auto px-6">
+        {/* <div className="max-w-5xl mx-auto px-6"> */}
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
             Get in Touch
           </h2>
           <ContactForm />
-        </div>
+        {/* </div> */}
       </section>
     </div>
   )

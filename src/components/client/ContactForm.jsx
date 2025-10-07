@@ -165,12 +165,7 @@ const ContactSection = () => {
           </p>
 
           <div className="flex items-center gap-4">
-            {/* Avatar (optional) */}
-            {/* <img
-              src={avatar}
-              alt="Samer Awajan"
-              className="w-14 h-14 rounded-full object-cover"
-            /> */}
+            
             <div>
               <p className="font-semibold">Samer Awajan</p>
               <p className="text-sm text-gray-500">CTO, Aramex</p>

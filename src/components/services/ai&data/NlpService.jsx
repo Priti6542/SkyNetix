@@ -1,7 +1,7 @@
 import React from 'react';
 import { NLPServicesData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 
 const NlpSevice = () => {
   const { hero, services, benefits } = NLPServicesData;
@@ -9,7 +9,7 @@ const NlpSevice = () => {
   // Defined heading for services section
   const ServiceSectionHeading = "Our Services";
 
-  const benefitsHeading = "Why Choose Our Data Analytics?";
+  const benefitsHeading = "Why Choose Our NLP Services?";
   const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
 
   return (
@@ -24,7 +24,7 @@ const NlpSevice = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { AIAndDataScienceData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 
 const AIDataScience = () => {
   const { hero, services, benefits } = AIAndDataScienceData;
@@ -9,7 +9,7 @@ const AIDataScience = () => {
   // Defined heading for services section
   const ServiceSectionHeading = "Our Services";
 
-  const benefitsHeading = "Why Choose Our Data Analytics?";
+  const benefitsHeading = "Why Choose Our AI & Data Science?";
   const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
 
   return (
@@ -24,7 +24,7 @@ const AIDataScience = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />

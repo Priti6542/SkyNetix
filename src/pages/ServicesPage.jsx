@@ -1,82 +1,90 @@
-import React, { useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, useLocation, Outlet } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const categoryGroups = {
-  Engineering: [
-    { path: 'software-engineering', label: 'Software Engineering' },
-    { path: 'system-engineering', label: 'System Engineering' },
-    { path: 'cloud-devops-engineering', label: 'Cloud DevOps Engineering' },
-  ],
-  'AI & Data': [
-    { path: 'ai-and-data-science', label: 'AI & Data Science' },
-    { path: 'machine-learning', label: 'Machine Learning' },
-    { path: 'ai-integration', label: 'AI Deployment & Managed Services' },
-    { path: 'nlp-services', label: 'NLP Services' },
-    { path: 'big-data', label: 'Big Data' },
-  ],
-  Cloud: [
-    { path: 'cloud-consulting', label: 'Cloud Consulting' },
-    { path: 'cloud-migration', label: 'Cloud Migration' },
-    { path: 'cloud-architecture', label: 'Cloud Architecture' },
-    { path: 'security-compliance', label: 'Security Compliance' },
-  ],
+  Engineering: ['software-engineering', 'system-engineering', 'cloud-devops-engineering'],
+  'AI & Data': ['ai-and-data-science', 'machine-learning', 'ai-integration', 'nlp-services', 'big-data'],
+  Cloud: ['cloud-consulting', 'cloud-migration', 'cloud-architecture', 'security-compliance'],
 };
 
 const ServicesPage = () => {
+  const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState('Engineering');
 
+  useEffect(() => {
+    const currentPath = location.pathname.split('/').pop();
+    const foundCategory = Object.keys(categoryGroups).find(category =>
+      categoryGroups[category].includes(currentPath)
+    );
+    if (foundCategory) setSelectedCategory(foundCategory);
+  }, [location]);
+
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Header */}
-      <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 text-gray-900 text-center">
+      <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-900 text-center">
         Our Services
       </h1>
-      <p className="text-base sm:text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
-        Explore our range of cutting-edge technology services designed to help modern businesses grow, transform, and innovate.
+      <p className="text-lg sm:text-xl text-gray-600 mb-10 text-center max-w-3xl mx-auto">
+        Explore our cutting-edge technology services to grow, transform, and innovate your business.
       </p>
 
       {/* Category Tabs */}
-      <nav className="mb-4 flex overflow-x-auto scrollbar-hide gap-2 sm:gap-4 border-b border-gray-200 pb-2 snap-x snap-mandatory">
+      <div className="flex gap-4 justify-center mb-8 flex-wrap">
         {Object.keys(categoryGroups).map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`transition-all px-3 sm:px-4 py-2 sm:py-3 rounded-t font-semibold shrink-0 snap-start
+            className={`px-5 py-2 rounded-full font-semibold text-lg transition-all transform
               ${selectedCategory === category
-                ? 'bg-blue-600 text-white scale-105 shadow-lg'
-                : 'bg-white text-gray-700 hover:bg-blue-100 hover:text-blue-700'
+                ? 'bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white scale-105 shadow-lg'
+                : 'bg-gray-200 text-gray-700 hover:bg-gradient-to-r hover:from-purple-400 hover:via-purple-300 hover:to-indigo-400 hover:text-white hover:scale-105'
               }`}
-            style={{ minWidth: 120 }}
           >
             {category}
           </button>
         ))}
-      </nav>
+      </div>
 
-      {/* Sub-navigation */}
-      <nav className="mb-6 flex overflow-x-auto scrollbar-hide gap-2 sm:gap-3 border-b border-gray-100 pb-3 whitespace-nowrap snap-x snap-mandatory">
-        {categoryGroups[selectedCategory].map(({ path, label }) => (
-          <NavLink
-            key={path}
-            to={path}
-            className={({ isActive }) =>
-              `inline-block px-3 sm:px-4 py-2 sm:py-2.5 rounded font-medium shrink-0 snap-start transition-all text-sm sm:text-base
-              ${isActive
-                ? 'border-b-2 border-blue-600 text-blue-600 bg-blue-50 scale-105'
-                : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-              }`
-            }
-            style={{ minWidth: 100 }}
-          >
-            {label}
+      {/* Sub-navigation Cards */}
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 p-6 rounded-2xl shadow-3xl"
+        // style={{ boxShadow: '0 10px 25px rgba(0,0,0,0.15)' }}
+      >
+
+        {categoryGroups[selectedCategory].map((path) => (
+          <NavLink key={path} to={path}>
+            {({ isActive }) => (
+              <motion.div
+                style={{
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
+                  borderRadius: '5px solid rgba(234, 36, 161, 0.05)',
+                }}
+                whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(0,0,0,0.15)' }}
+                className={`p-5 rounded-2xl border transition-all cursor-pointer
+                  
+                  ${isActive
+                    ? 'bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white shadow-lg border-transparent'
+                    : 'bg-white text-gray-800 border border-gray-200 hover:bg-purple-50 hover:border-purple-300'
+                  }`}
+              >
+                <h3 className="font-semibold text-lg capitalize">{path.replace(/-/g, ' ')}</h3>
+              </motion.div>
+            )}
           </NavLink>
         ))}
-      </nav>
-
-      {/* Outlet renders nested service detail */}
-      <div className="animate-fade-in mt-4 sm:mt-6">
-        <Outlet />
       </div>
+
+      {/* Outlet for service details with animation */}
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Outlet />
+      </motion.div>
     </div>
   );
 };

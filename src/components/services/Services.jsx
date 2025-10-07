@@ -36,7 +36,7 @@ const Services = () => {
         { icon: <FiCloud />, title: "Cloud Migration", desc: "CI/CD pipelines setup." },
         { icon: <FiCloud />, title: "Cloud Architecture", desc: "Cloud health monitoring." },
         // { icon: <FiCloud />, title: "Security Compliance", desc: "Harden cloud environments." },
-        { icon: <FiCloud />, title: "Security Complience", desc: "Monitor and operate cloud." },
+        { icon: <FiCloud />, title: "Security Compliance", desc: "Monitor and operate cloud." },
       ],
     },
   ];
@@ -45,6 +45,7 @@ const Services = () => {
     const pathMap = {
       "Software Engineering": "/services/software-engineering",
       "System Engineering": "/services/system-engineering",
+      "Cloud DevOps Engineering": "/services/cloud-devops-engineering",
       "AI & Data Science": "/services/ai-and-data-science",
       "Machine Learning": "/services/machine-learning",
       "AI Integration": "/services/ai-integration",

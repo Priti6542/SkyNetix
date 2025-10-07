@@ -1,7 +1,7 @@
 import React from 'react';
 import { CloudDevopsData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 
 const CloudDevopsEngineering = () => {
   const { hero, services, benefits } = CloudDevopsData;
@@ -24,7 +24,7 @@ const CloudDevopsEngineering = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CloudArchitectureData } from '../servicedata/ServiceData';
 import Benefits from '../benefits/Benefits';
-import ServiceSection from '../servicesection/serviceSection';
+// import ServiceSection from '../servicesection/serviceSection';
 
 const CloudArchitecture = () => {
   const { hero, services, benefits } = CloudArchitectureData;
@@ -9,7 +9,7 @@ const CloudArchitecture = () => {
   // Defined heading for services section
   const ServiceSectionHeading = "Our Services";
 
-  const benefitsHeading = "Why Choose Our Web Development?";
+  const benefitsHeading = "Why Choose Our Cloud Architecture?";
   const benefitsSubheading = "Explore the core advantages our services offer to help your business grow.";
 
   return (
@@ -24,7 +24,7 @@ const CloudArchitecture = () => {
       </div>
 
       {/* Services Section */}
-      <ServiceSection heading={ServiceSectionHeading} services={services} />
+      {/* <ServiceSection heading={ServiceSectionHeading} services={services} /> */}
 
       {/* Benefits Section */}
       <Benefits heading={benefitsHeading} subheading={benefitsSubheading} benefits={benefits} />
