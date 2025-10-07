@@ -80,11 +80,11 @@ const Hero = () => {
                   {item.title[1]}
                 </h1>
                 <p>{item.description[0]}</p>
-                <div className={styles.logos}>
+                {/* <div className={styles.logos}>
                   {item.logos?.map((logo, i) => (
                     <img key={i} src={logo} alt={`Logo ${i + 1}`} />
                   ))}
-                </div>
+                </div> */}
               </div>
             )}
 

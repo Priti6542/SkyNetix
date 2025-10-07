@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import creationsData from "./VideoSectionData";
 
 function VideoSection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState(null);
+  const videoRef = useRef(null);
 
   const handleOpenModal = (video) => {
     setActiveVideo(video);
@@ -11,6 +12,10 @@ function VideoSection() {
   };
 
   const handleCloseModal = () => {
+    // 🛑 Pause video before closing
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
     setModalOpen(false);
     setActiveVideo(null);
   };
@@ -26,24 +31,14 @@ function VideoSection() {
       </p>
 
       <div
-        className="
-          flex items-center gap-4 mt-10 
-          overflow-x-auto sm:overflow-x-visible sm:flex-nowrap
-          h-[300px] sm:h-[400px] md:h-[450px] lg:h-[400px]
-          group
-        "
+        className="flex items-center gap-4 mt-10 overflow-x-auto sm:overflow-x-visible sm:flex-nowrap h-[300px] sm:h-[400px] md:h-[450px] lg:h-[400px] group"
       >
         {creationsData.map((item, index) => (
           <div
             key={index}
-            className="
-              relative group 
-              flex-shrink-0 w-[240px] h-[300px] sm:w-[280px] sm:h-[400px] md:w-[320px] md:h-[450px] lg:w-[280px] lg:h-[400px]
-              transition-all duration-500
-              hover:w-[400px] hover:h-[450px] sm:hover:w-[400px] sm:hover:h-[450px]
-              border border-transparent hover:border-white 
-              rounded overflow-hidden
-            "
+            className="relative group flex-shrink-0 w-[240px] h-[300px] sm:w-[280px] sm:h-[400px] md:w-[320px] md:h-[450px] lg:w-[280px] lg:h-[400px]
+              transition-all duration-500 hover:w-[400px] hover:h-[450px] sm:hover:w-[400px] sm:hover:h-[450px]
+              border border-transparent hover:border-white rounded overflow-hidden"
           >
             <video
               className={`h-full w-full object-cover ${item.videoPosition}`}
@@ -78,19 +73,37 @@ function VideoSection() {
             className="relative max-w-full w-full sm:max-w-3xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="absolute top-2 right-2 text-white text-4xl sm:text-5xl leading-none"
-              onClick={handleCloseModal}
-              aria-label="Close modal"
-            >
-              &times;
-            </button>
-            <video
-              src={activeVideo}
-              controls
-              autoPlay
-              className="w-full max-h-[80vh] rounded shadow-lg bg-black"
-            />
+            {modalOpen && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4 sm:p-6"
+                onClick={handleCloseModal}
+              >
+                {/* Container for video + close button */}
+                <div
+                  className="relative w-full max-w-3xl mx-auto"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* 🎥 Video */}
+                  <video
+                    ref={videoRef}
+                    src={activeVideo}
+                    controls
+                    autoPlay
+                    className="w-full max-h-[80vh] rounded-2xl shadow-2xl bg-black"
+                  />
+
+                  {/* ❌ Close button */}
+                  <button
+                    onClick={handleCloseModal}
+                    className="absolute -top-4 -right-4 bg-white/20 hover:bg-white/40 text-white font-bold text-3xl sm:text-4xl rounded-full p-2 sm:p-3 transition-all duration-300 shadow-lg backdrop-blur-md"
+                    aria-label="Close video"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
       )}
