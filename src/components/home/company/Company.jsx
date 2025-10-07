@@ -2,7 +2,7 @@ import React from 'react';
 import { companyHighlights } from './CompanyData';
 
 const Company = () => (
-  <section className="bg-gray-900 text-white py-16 px-8 mt-30">
+  <section className="bg-gray-900 text-white py-16 px-8 mt-3">
     <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
       {/* Left Side */}
       <div className="flex-1">

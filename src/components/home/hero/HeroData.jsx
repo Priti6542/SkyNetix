@@ -7,7 +7,8 @@ import heroimg4 from '../../../assets/heroimg4.jpg'
 export const HeroData = [
   {
     id: 1,
-    title: ["Innovation"],
+   label: "Innovation", 
+   title: ["Innovation"], 
     description: [
       "At Skynetix, innovation is at the heart of everything we do.We believe in turning ideas into impactful digital solutions.Our team blends creativity with the latest technologies to deliver unique experiences.",
       "From concept to execution, we help businesses stay ahead in the digital era.Every project is an opportunity to innovate and create something extraordinary."
@@ -23,6 +24,7 @@ export const HeroData = [
   },
   {
   id: 2,
+  label: "Web & App Development", 
   title: ["Web & App Development"],
   description: [
     "Your business deserves a strong digital presence.We specialize in building responsive websites and intuitive mobile apps.",
@@ -42,7 +44,7 @@ export const HeroData = [
 
   {
     id: 3,
-    title: ["Cloud & Security"],
+    label: "Cloud & Security", title: ["Cloud & Security"],
     description: ["The future of business lies in the cloud, and we make that transition seamless.At Skynetix, we provide secure, scalable, and cost-effective cloud solutions.Our experts ensure your data is protected with enterprise-grade security.", 
       "We help organizations optimize infrastructure and enhance efficiency.With us, you’re always ready for tomorrow’s challenges."],
     buttonText: "Explore industry solution",
@@ -51,6 +53,7 @@ export const HeroData = [
   },
   {
     id: 4,
+    label: "Business Growth",
     title: ["Business Growth"],
     description: ["Technology is more than just code – it’s a catalyst for growth.We empower businesses to scale faster and smarter with digital tools.Our tailored strategies focus on results that drive success." ,
       "From startups to enterprises, we support every stage of growth.Together, we build solutions that shape the future of your business."],

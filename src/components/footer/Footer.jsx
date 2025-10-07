@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300 px-6 pt-16 pb-8 mt-20">
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300 px-6 pt-16 pb-8 mt-5">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         {/* About Section */}
         <div>

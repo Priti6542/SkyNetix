@@ -14,7 +14,7 @@ const HomePage = ({ setShowServicesPopup }) => {
 
       <section data-speed="0.9" className="mt-12">
         {/* Passing setShowServicesPopup to Card for popup control */}
-        <Card setShowServicesPopup={setShowServicesPopup} />
+        <Card setShowServicesPopup={setShowServicesPopup} className="top-[90px]" />
       </section>
 
       <section data-speed="1.1" className="mt-12">

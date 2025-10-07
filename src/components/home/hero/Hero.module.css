@@ -45,19 +45,23 @@
 .verticalLabel {
   position: absolute;
   top: 50%;
+  left: 10px; /* for left card, override in .left/.right */
+  right: 10px; /* for right card */
   transform: translateY(-50%);
-  color: rgb(12, 9, 9);
-  font-weight: 600;
-  font-size: 1rem;
+  color: #ffffff; /* White text for contrast */
+  font-weight: 700; /* Bold */
+  font-size: 1.2rem; /* Slightly bigger */
   user-select: none;
   pointer-events: none;
   width: max-content;
-  padding: 6px 12px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  padding: 8px 14px; /* more padding for readability */
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent dark bg */
+  border-radius: 10px;
   letter-spacing: 1.5px;
   text-align: center;
+  z-index: 10;
 }
+
 
 /* Position and rotate vertical label on the left card */
 .left .verticalLabel {
