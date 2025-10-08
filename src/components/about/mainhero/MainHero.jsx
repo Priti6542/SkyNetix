@@ -87,7 +87,7 @@ const MainHero = () => {
             transition={{ duration: 1.2 }}
             className="text-base mt-6 max-w-xl mx-auto"
           >
-            At Devcons Software Solution, we believe in transforming ideas into powerful digital solutions.
+            At SkyNetix Software Solution, we believe in transforming ideas into powerful digital solutions.
             Our team of skilled professionals delivers innovative web, mobile, and enterprise applications tailored to your business needs.
             We combine creativity, technology, and strategy to drive growth and efficiency.
             With a focus on quality, security, and scalability, we help businesses thrive in a competitive digital landscape.
