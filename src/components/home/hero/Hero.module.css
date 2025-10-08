@@ -270,11 +270,11 @@
     height: 380px;
     gap: 20px;
     /* padding: 0 0.5rem; */
-    margin-top: q10px;
+    margin-top: 10px;
   }
   .card,
   .active {
-    width: 95vw;
+    width: 90vw;
     height:400px;
   }
   /* .cardText h1 {
