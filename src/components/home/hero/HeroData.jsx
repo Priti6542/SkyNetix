@@ -1,7 +1,7 @@
 // HeroData.jsx
 import heroimg1 from '../../../assets/heroimg1.jpg'
 import heroimg2 from '../../../assets/heroimg2.jpg'
-import heroimg3 from '../../../assets/heroimg3.jpg'
+import heroimg3 from '../../../assets/heroimg3.webp'
 import heroimg4 from '../../../assets/heroimg4.jpg'
 
 export const HeroData = [

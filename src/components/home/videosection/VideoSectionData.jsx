@@ -26,13 +26,13 @@ const creationsData = [
     video:video3,
         videoPosition: "object-center",
   },
-  {
-    title: "Software engineers",
-    description:
-      "Bridging the gap between human intent and machine understanding through expert prompt design.",
-    video:video1,
-    videoPosition: "object-center",
-  },
+  // {
+  //   title: "Software engineers",
+  //   description:
+  //     "Bridging the gap between human intent and machine understanding through expert prompt design.",
+  //   video:video1,
+  //   videoPosition: "object-center",
+  // },
   
 ];
 

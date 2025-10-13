@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 610px;
+  height: 630px;
+  width: 100%;
   gap: 25px;
   padding: 0 1rem;
   overflow-x: auto;
@@ -101,31 +102,75 @@
   display: block;
 }
 
-/* ✅ Center text nicely */
+/* ===================== */
+/* ✨ Glassy Text Overlay */
+/* ===================== */
+
 .cardText {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* text-align: center; */
   color: white;
   z-index: 10;
   max-width: 80%;
   pointer-events: none;
+  text-align: center;
+
+  /* 🌟 Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* 🎞️ Animation */
+  opacity: 0;
+  transform: translate(-50%, -40%) scale(0.95);
+  animation: fadeSlideIn 1.2s ease forwards;
 }
 
+/* Headings inside card text */
 .cardText h1 {
-  margin: 0 0 15px;
-  /* font-weight: 600; */
-  font-size: 3rem;
+  margin: 0 0 10px;
+  font-size: 2.8rem;
+  font-weight: 700;
   line-height: 1.2;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #ffffff, #d3d3d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cardText p {
-  margin: 0 0 15px;
-  /* font-weight: 600; */
-  font-size: 1.6rem;
-  line-height: 1.2;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ✨ Animation Keyframes */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20%) scale(0.9);
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ✅ Hover enhancement for interactivity */
+.card:hover .cardText {
+  animation: fadeSlideIn 0.8s ease forwards;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
 }
 
 .logos {

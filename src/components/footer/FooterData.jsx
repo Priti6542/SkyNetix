@@ -31,7 +31,21 @@ const footerData = [
   {
     heading: 'Our Services',
     services: [
-      'Web Development', 'App Development', 'Outsourcing', 'UX Design', 'Product Management', 'Graphic Design', 'IoT Services', 'Digital Marketing'
+      // 'Web Development', 'App Development', 'Outsourcing', 'UX Design', 'Product Management', 'Graphic Design', 'IoT Services', 'Digital Marketing'
+      { title: "Software Engineering", path: "/services/software-engineering" },
+       { title: "System Engineering", path: "/services/system-engineering" },
+      { title: "Cloud DevOps Engineering", path: "/services/cloud-devops-engineering" },
+      { title: "AI & Data Science", path: "/services/ai-and-data-science" },
+      { title: "Machine Learning", path: "/services/machine-learning" },
+      { title: "AI Integration", path: "/services/ai-integration" },
+      { title: "NLP Services", path: "/services/nlp-services" },
+      { title: "Big Data", path: "/services/big-data" },
+      { title: "Cloud Consulting", path: "/services/cloud-consulting" },
+      { title: "Cloud Migration", path: "/services/cloud-migration" },
+      { title: "Cloud Architecture", path: "/services/cloud-architecture" },
+      { title: "Security Compliance", path: "/services/security-compliance" },
+      { title: "Monitoring & Ops", path: "/services/monitoring-ops" },
+      { title: 'Contact Us', path: '/contact' },
     ]
   },
   {

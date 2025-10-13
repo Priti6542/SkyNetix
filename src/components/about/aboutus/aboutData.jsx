@@ -8,9 +8,13 @@ export const images = [
 ];
 
 export const aboutContent = {
-  heading: "About Us",
+  heading: "Innovative Solutions",
   subHeading: "Welcome To SkyNetix Software Solutions Pvt. Ltd.",
-  paragraph: `SkyNetix Software Solutions Pvt Ltd is a software company that specializes in providing custom software development and IT consulting services. Based in India, the company has a team of skilled software developers, engineers, and designers who work together to create high-quality software products and services for clients.
+  paragraph: `SkyNetix Systems is a premier cloud application development company dedicated to delivering innovative, AI-driven solutions tailored to modern business needs. With a strong focus on cloud computing, artificial intelligence, and scalable software architectures, the company empowers enterprises to accelerate their digital transformation journey.
+
+Specializing in microservices, cloud architecture, and full-stack development, SkyNetix Systems harnesses the power of Amazon Web Services (AWS), Google Cloud Platform (GCP) and Azure to create high-performance, resilient, and cost-efficient applications. The company’s expertise extends across a wide range of industries, ensuring that clients receive customized, future-ready solutions designed for maximum efficiency and impact.
+
+With a commitment to technical excellence and innovation, SkyNetix Systems leverages modern software engineering practices, DevOps, and containerization to build applications that are scalable, secure, and seamlessly integrated into existing infrastructures. The company's goal is to provide state-of-the-art cloud solutions that enhance business agility, improve operational efficiency, and drive sustainable growth in an increasingly digital world.
 
 `,
   link: "/about",

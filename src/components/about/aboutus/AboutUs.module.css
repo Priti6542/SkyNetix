@@ -28,6 +28,9 @@
 .contentRight {
   width: 100%;
 }
+.contentRight h2{
+  font-size: 10px;
+}
 
 .row {
   width: 100%;

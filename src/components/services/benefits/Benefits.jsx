@@ -46,7 +46,7 @@ const Benefits = ({ heading, subheading, benefits }) => {
                 rest: {
                   width: 500,
                   height: 10,
-                  backgroundColor: "#ff4500",
+                  background: "linear-gradient(135deg, #710b5dff, #210020ff)",
                   borderTopRightRadius: "40px",
                   // borderBottomRightRadius: "200px",
                   // borderBottomLeftRadius: "200px",

@@ -34,6 +34,7 @@ import VisionMissionValue from '../components/about/vissionmission/VisionMisionV
 import AboutUs from '../components/about/aboutus/AboutUs'
 import HeroSection from '../components/about/hero/Hero'
 import MainHero from '../components/about/mainhero/MainHero'
+import Team from '../components/about/team/Team'
 
 const AboutusPage = () => {
   return (
@@ -44,7 +45,7 @@ const AboutusPage = () => {
       </section>
 
       {/* Sub Hero / Introduction */}
-      <section data-speed="0.9" className="bg-gray-50 py-12">
+      <section data-speed="0.9" >
         <HeroSection />
       </section>
 
@@ -54,8 +55,12 @@ const AboutusPage = () => {
       </section>
 
       {/* Vision / Mission / Values */}
-      <section data-speed="1.1" className="bg-gradient-to-r from-indigo-50 to-white py-20">
+      <section data-speed="1.1">
         <VisionMissionValue />
+      </section>
+
+      <section data-speed="1.1">
+        <Team/>
       </section>
     </div>
   )
