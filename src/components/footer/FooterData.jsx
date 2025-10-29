@@ -52,7 +52,7 @@ const footerData = [
     heading: 'Contact Us',
     contact: {
       address: 'Office No. 4-B, ... Pune- 411027',
-      phone: '+91 9112100663',
+      phone: '91-45386868',
       email: 'prititole@gmail.com',
     }
   }

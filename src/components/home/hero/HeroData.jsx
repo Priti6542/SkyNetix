@@ -10,7 +10,7 @@ export const HeroData = [
    label: "Innovation", 
    title: ["Innovation"], 
     description: [
-      "At Skynetix, innovation is at the heart of everything we do.We believe in turning ideas into impactful digital solutions.Our team blends creativity with the latest technologies to deliver unique experiences.",
+      "At Skynetix, innovation is at the heart of everything we do.We believe in turning ideas into impactful digital solutions.",
       "From concept to execution, we help businesses stay ahead in the digital era.Every project is an opportunity to innovate and create something extraordinary."
     ],
     // buttonText: "Learn More",
@@ -45,7 +45,7 @@ export const HeroData = [
   {
     id: 3,
     label: "Cloud & Security", title: ["Cloud & Security"],
-    description: ["The future of business lies in the cloud, and we make that transition seamless.At Skynetix, we provide secure, scalable, and cost-effective cloud solutions.Our experts ensure your data is protected with enterprise-grade security.", 
+    description: ["At Skynetix, we provide secure, scalable, and cost-effective cloud solutions.Our experts ensure your data is protected with enterprise-grade security.", 
       "We help organizations optimize infrastructure and enhance efficiency.With us, you’re always ready for tomorrow’s challenges."],
     buttonText: "Explore industry solution",
     // text: "client",
@@ -55,7 +55,7 @@ export const HeroData = [
     id: 4,
     label: "Business Growth",
     title: ["Business Growth"],
-    description: ["Technology is more than just code – it’s a catalyst for growth.We empower businesses to scale faster and smarter with digital tools.Our tailored strategies focus on results that drive success." ,
+    description: ["We empower businesses to scale faster and smarter with digital tools.Our tailored strategies focus on results that drive success." ,
       "From startups to enterprises, we support every stage of growth.Together, we build solutions that shape the future of your business."],
     // buttonText: "Explore industry solution",
     // text: "client",

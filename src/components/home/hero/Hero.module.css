@@ -317,43 +317,39 @@
     /* padding: 0 0.5rem; */
     margin-top: 10px;
   }
-  .card,
+
   .active {
     width: 90vw;
     height:400px;
   }
-  /* .cardText h1 {
-    font-size: 1.8rem;
-  }
-  .cardText p {
-    font-size: 1.1rem;
-  } */
-.cardText {
-  position: absolute;
-  top: 38%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  /* text-align: center; */
-  color: white;
-  z-index: 10;
-  max-width: 160%;
-  pointer-events: none;
-}
-
-.cardText h1 {
-  margin: 0 0 15px;
-  /* font-weight: 600; */
-  font-size: 3rem;
-  line-height: 1.2;
-}
-
-.cardText p {
-  margin: 0 0 15px;
-  /* font-weight: 600; */
-  font-size: 1.6rem;
   
-  /* line-height: 1.2; */
+  /* ----------- Phones ----------- */
+@media (max-width: 768px) {
+
+  .cardText {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 14px;
+  }
+
+  .cardText h1 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+
+  .cardText p {
+    font-size: 1rem;
+  }
+
+  .active {
+    height: 380px;
+  }
 }
+
+  
   .floatingCard {
     width: 90%;
     right: 5%;

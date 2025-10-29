@@ -8,7 +8,7 @@ const Team = () => {
       <h1 className="text-4xl font-bold text-center text-indigo-700 mb-12">
         Meet Our Team
       </h1>
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-wrap  justify-center gap-6">
         {teamData.map((member) => (
           <TeamCard key={member.id} member={member} />
         ))}
